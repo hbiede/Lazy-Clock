@@ -89,4 +89,3 @@ class ViewController: UIViewController {
         userSettings.set(colorRotationIndex, forKey: "LazyClock-ColorIndex")
     }
 }
-
