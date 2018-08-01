@@ -1,1 +1,1 @@
-# Digital-Clock
+# Lazy-Clock
