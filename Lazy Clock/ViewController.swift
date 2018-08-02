@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         }
     }
 
-    /// Rotates colors on single finger touch and saves the color to UserDefaults
+    /// Rotates colors on single finger touch and saves the color to UserDefaults.
     @IBAction func onTouch(_ sender: Any) {
         if (timeLbl.textColor == colorRotation.last) {
             colorRotationIndex = 0

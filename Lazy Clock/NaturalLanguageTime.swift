@@ -55,7 +55,10 @@ open class NaturalLanguageTime {
             var returnStatement:String
 
             switch minuteValue {
-            case 0:
+            case 0, 60:
+                if (minuteValue == 60) {
+                    hourString = (hours! == 23 ? hourConversion[0] : hourConversion[hours! + 1])!
+                }
                 if (hours! == 0 || hours! == 12)
                 {
                     returnStatement = "\(hourString)"
@@ -69,6 +72,12 @@ open class NaturalLanguageTime {
             case 45:
                 hourString = (hours! == 23 ? hourConversion[0] : hourConversion[hours! + 1])!
                 returnStatement = "Quarter til \(hourString)"
+            case 50:
+                hourString = (hours! == 23 ? hourConversion[0] : hourConversion[hours! + 1])!
+                returnStatement = "10 til \(hourString)"
+            case 55:
+                hourString = (hours! == 23 ? hourConversion[0] : hourConversion[hours! + 1])!
+                returnStatement = "5 til \(hourString)"
             default:
                 returnStatement = "\(minuteValue) past \(hourString)"
             }
@@ -77,4 +86,3 @@ open class NaturalLanguageTime {
         }
     }
 }
-
