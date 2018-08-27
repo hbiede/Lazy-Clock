@@ -17,8 +17,8 @@ open class NaturalLanguageTime {
     public struct NatTime {
         private let hourConversion = [0: "Midnight", 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine", 10: "Ten", 11: "Eleven", 12: "Noon", 13: "One", 14: "Two", 15: "Three", 16: "Four", 17: "Five", 18: "Six", 19: "Seven", 20: "Eight", 21: "Nine", 22: "Ten", 23: "Eleven"]
         private var hours:Int?, minutes:Int?
-        private var natLangString:String = "Default Time"
-        public var timeString: String {
+        private var natLangString:String! = "Default Time"
+        public var timeString: String! {
             get {
                 return (hours == nil || minutes == nil) ? "Default Time" : "\(String(describing: hours!))-\(String(describing: minutes!))"
             }
@@ -45,7 +45,7 @@ open class NaturalLanguageTime {
         }
 
         func roundByFive(_ inputNumber: Int!) -> Int {
-            return Int(round(Double(inputNumber) / 5)) * 5
+            return Int(ceil(Double(inputNumber) / 5)) * 5
         }
 
         func toNatLang() -> String {
@@ -65,6 +65,8 @@ open class NaturalLanguageTime {
                 } else {
                     returnStatement = "\(hourString) o'clock"
                 }
+            case 5:
+                returnStatement = "5 past \(hourString)"
             case 15:
                 returnStatement = "Quarter past \(hourString)"
             case 30:
@@ -79,7 +81,7 @@ open class NaturalLanguageTime {
                 hourString = (hours! == 23 ? hourConversion[0] : hourConversion[hours! + 1])!
                 returnStatement = "5 til \(hourString)"
             default:
-                returnStatement = "\(minuteValue) past \(hourString)"
+                returnStatement = "\(hourString) \(minuteValue)"
             }
 
             return returnStatement.capitalized

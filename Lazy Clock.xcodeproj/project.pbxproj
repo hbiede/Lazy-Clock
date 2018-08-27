@@ -7,35 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C310D0B22112B7CA002302E8 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C310D0B12112B7CA002302E8 /* NotificationCenter.framework */; };
-		C310D0B52112B7CA002302E8 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C310D0B42112B7CA002302E8 /* TodayViewController.swift */; };
-		C310D0B82112B7CA002302E8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C310D0B62112B7CA002302E8 /* MainInterface.storyboard */; };
-		C310D0BC2112B7CA002302E8 /* TodayView.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C310D0AF2112B7CA002302E8 /* TodayView.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C310D0C52112BA54002302E8 /* NaturalLanguageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */; };
-		C310D0C62112BA58002302E8 /* NaturalLanguageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */; };
-		C310D0EF2112C453002302E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C310D0EE2112C453002302E8 /* AppDelegate.swift */; };
-		C310D0F12112C453002302E8 /* TVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C310D0F02112C453002302E8 /* TVViewController.swift */; };
-		C310D0F42112C453002302E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C310D0F22112C453002302E8 /* Main.storyboard */; };
-		C310D0F62112C455002302E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C310D0F52112C455002302E8 /* Assets.xcassets */; };
-		C310D0FB2112C475002302E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35A85CC211225460053AB48 /* Assets.xcassets */; };
 		C310D0FC2112C47A002302E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35A85CC211225460053AB48 /* Assets.xcassets */; };
-		C310D0FD2112C47A002302E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35A85CC211225460053AB48 /* Assets.xcassets */; };
-		C310D0FE2112D3EB002302E8 /* NaturalLanguageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */; };
-		C35A85CB211225340053AB48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CA211225340053AB48 /* ViewController.swift */; };
 		C35A85D3211225470053AB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CF211225460053AB48 /* AppDelegate.swift */; };
 		C35A85D82112255F0053AB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35A85D42112255F0053AB48 /* Main.storyboard */; };
 		C35A85D92112255F0053AB48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35A85D62112255F0053AB48 /* LaunchScreen.storyboard */; };
+		C37133022132809000C8282A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37133012132809000C8282A /* AppDelegate.swift */; };
+		C37133252132821700C8282A /* NaturalLanguageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */; };
+		C3713328213282BF00C8282A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C371331C2132816400C8282A /* Main.storyboard */; };
+		C3E7A2622133733200724CCB /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3E7A2612133733200724CCB /* Icon.xcassets */; };
+		C3E7A264213378F600724CCB /* NatLangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E7A263213378F600724CCB /* NatLangViewController.swift */; };
+		C3E7A26521337D0200724CCB /* NatLangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E7A263213378F600724CCB /* NatLangViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C310D0BA2112B7CA002302E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C35A85AB21121A0B0053AB48 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C310D0AE2112B7CA002302E8;
-			remoteInfo = TodayView;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C310D0C02112B7CA002302E8 /* Embed App Extensions */ = {
@@ -44,7 +27,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				C310D0BC2112B7CA002302E8 /* TodayView.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,44 +34,31 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C310D0AF2112B7CA002302E8 /* TodayView.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayView.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C310D0B12112B7CA002302E8 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		C310D0B42112B7CA002302E8 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		C310D0B72112B7CA002302E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		C310D0B92112B7CA002302E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C310D0EC2112C453002302E8 /* Lazy Clock TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lazy Clock TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C310D0EE2112C453002302E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C310D0F02112C453002302E8 /* TVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViewController.swift; sourceTree = "<group>"; };
-		C310D0F32112C453002302E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C310D0F52112C455002302E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C310D0F72112C455002302E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C35A85B321121A0B0053AB48 /* Lazy Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lazy Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C35A85CA211225340053AB48 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "Lazy Clock/ViewController.swift"; sourceTree = SOURCE_ROOT; };
 		C35A85CC211225460053AB48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Lazy Clock/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		C35A85CD211225460053AB48 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Lazy Clock/Info.plist"; sourceTree = SOURCE_ROOT; };
 		C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NaturalLanguageTime.swift; path = "Lazy Clock/NaturalLanguageTime.swift"; sourceTree = SOURCE_ROOT; };
 		C35A85CF211225460053AB48 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Lazy Clock/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
-		C35A85D52112255F0053AB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Lazy Clock/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
-		C35A85D72112255F0053AB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Lazy Clock/Base.lproj/LaunchScreen.storyboard"; sourceTree = SOURCE_ROOT; };
+		C37132F821327D9700C8282A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C37132F921327D9700C8282A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C37132FF2132809000C8282A /* Lazy Clock TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lazy Clock TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C37133012132809000C8282A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C371330A2132809200C8282A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C371331D2132816400C8282A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C3E7A2612133733200724CCB /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
+		C3E7A263213378F600724CCB /* NatLangViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatLangViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C310D0AC2112B7CA002302E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C310D0B22112B7CA002302E8 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C310D0E92112C453002302E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C35A85B021121A0B0053AB48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37132FC2132809000C8282A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -107,34 +76,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C310D0B32112B7CA002302E8 /* TodayView */ = {
-			isa = PBXGroup;
-			children = (
-				C310D0B42112B7CA002302E8 /* TodayViewController.swift */,
-				C310D0B62112B7CA002302E8 /* MainInterface.storyboard */,
-				C310D0B92112B7CA002302E8 /* Info.plist */,
-			);
-			path = TodayView;
-			sourceTree = "<group>";
-		};
-		C310D0ED2112C453002302E8 /* Lazy Clock TV */ = {
-			isa = PBXGroup;
-			children = (
-				C310D0EE2112C453002302E8 /* AppDelegate.swift */,
-				C310D0F02112C453002302E8 /* TVViewController.swift */,
-				C310D0F22112C453002302E8 /* Main.storyboard */,
-				C310D0F52112C455002302E8 /* Assets.xcassets */,
-				C310D0F72112C455002302E8 /* Info.plist */,
-			);
-			path = "Lazy Clock TV";
-			sourceTree = "<group>";
-		};
 		C35A85AA21121A0B0053AB48 = {
 			isa = PBXGroup;
 			children = (
 				C35A85B521121A0B0053AB48 /* Lazy Clock */,
-				C310D0B32112B7CA002302E8 /* TodayView */,
-				C310D0ED2112C453002302E8 /* Lazy Clock TV */,
+				C37133002132809000C8282A /* Lazy Clock TV */,
 				C310D0B02112B7CA002302E8 /* Frameworks */,
 				C35A85B421121A0B0053AB48 /* Products */,
 			);
@@ -144,8 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				C35A85B321121A0B0053AB48 /* Lazy Clock.app */,
-				C310D0AF2112B7CA002302E8 /* TodayView.appex */,
-				C310D0EC2112C453002302E8 /* Lazy Clock TV.app */,
+				C37132FF2132809000C8282A /* Lazy Clock TV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,7 +100,7 @@
 			children = (
 				C35A85CC211225460053AB48 /* Assets.xcassets */,
 				C35A85CF211225460053AB48 /* AppDelegate.swift */,
-				C35A85CA211225340053AB48 /* ViewController.swift */,
+				C3E7A263213378F600724CCB /* NatLangViewController.swift */,
 				C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */,
 				C35A85D42112255F0053AB48 /* Main.storyboard */,
 				C35A85D62112255F0053AB48 /* LaunchScreen.storyboard */,
@@ -164,43 +109,20 @@
 			path = "Lazy Clock";
 			sourceTree = "<group>";
 		};
+		C37133002132809000C8282A /* Lazy Clock TV */ = {
+			isa = PBXGroup;
+			children = (
+				C3E7A2612133733200724CCB /* Icon.xcassets */,
+				C37133012132809000C8282A /* AppDelegate.swift */,
+				C371331C2132816400C8282A /* Main.storyboard */,
+				C371330A2132809200C8282A /* Info.plist */,
+			);
+			path = "Lazy Clock TV";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C310D0AE2112B7CA002302E8 /* TodayView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C310D0BF2112B7CA002302E8 /* Build configuration list for PBXNativeTarget "TodayView" */;
-			buildPhases = (
-				C310D0AB2112B7CA002302E8 /* Sources */,
-				C310D0AC2112B7CA002302E8 /* Frameworks */,
-				C310D0AD2112B7CA002302E8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TodayView;
-			productName = TodayView;
-			productReference = C310D0AF2112B7CA002302E8 /* TodayView.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		C310D0EB2112C453002302E8 /* Lazy Clock TV */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C310D0F82112C455002302E8 /* Build configuration list for PBXNativeTarget "Lazy Clock TV" */;
-			buildPhases = (
-				C310D0E82112C453002302E8 /* Sources */,
-				C310D0E92112C453002302E8 /* Frameworks */,
-				C310D0EA2112C453002302E8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Lazy Clock TV";
-			productName = "Lazy Clock TV";
-			productReference = C310D0EC2112C453002302E8 /* Lazy Clock TV.app */;
-			productType = "com.apple.product-type.application";
-		};
 		C35A85B221121A0B0053AB48 /* Lazy Clock */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C35A85C521121A0B0053AB48 /* Build configuration list for PBXNativeTarget "Lazy Clock" */;
@@ -213,11 +135,27 @@
 			buildRules = (
 			);
 			dependencies = (
-				C310D0BB2112B7CA002302E8 /* PBXTargetDependency */,
 			);
 			name = "Lazy Clock";
 			productName = "Lazy Time";
 			productReference = C35A85B321121A0B0053AB48 /* Lazy Clock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C37132FE2132809000C8282A /* Lazy Clock TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C371330B2132809200C8282A /* Build configuration list for PBXNativeTarget "Lazy Clock TV" */;
+			buildPhases = (
+				C37132FB2132809000C8282A /* Sources */,
+				C37132FC2132809000C8282A /* Frameworks */,
+				C37132FD2132809000C8282A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Lazy Clock TV";
+			productName = "Lazy Clock TV";
+			productReference = C37132FF2132809000C8282A /* Lazy Clock TV.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -230,13 +168,10 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Hundter Biede";
 				TargetAttributes = {
-					C310D0AE2112B7CA002302E8 = {
-						CreatedOnToolsVersion = 10.0;
-					};
-					C310D0EB2112C453002302E8 = {
-						CreatedOnToolsVersion = 10.0;
-					};
 					C35A85B221121A0B0053AB48 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					C37132FE2132809000C8282A = {
 						CreatedOnToolsVersion = 10.0;
 					};
 				};
@@ -255,32 +190,12 @@
 			projectRoot = "";
 			targets = (
 				C35A85B221121A0B0053AB48 /* Lazy Clock */,
-				C310D0AE2112B7CA002302E8 /* TodayView */,
-				C310D0EB2112C453002302E8 /* Lazy Clock TV */,
+				C37132FE2132809000C8282A /* Lazy Clock TV */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C310D0AD2112B7CA002302E8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C310D0FD2112C47A002302E8 /* Assets.xcassets in Resources */,
-				C310D0B82112B7CA002302E8 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C310D0EA2112C453002302E8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C310D0F62112C455002302E8 /* Assets.xcassets in Resources */,
-				C310D0FB2112C475002302E8 /* Assets.xcassets in Resources */,
-				C310D0F42112C453002302E8 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C35A85B121121A0B0053AB48 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,69 +206,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C37132FD2132809000C8282A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3E7A2622133733200724CCB /* Icon.xcassets in Resources */,
+				C3713328213282BF00C8282A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C310D0AB2112B7CA002302E8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C310D0C62112BA58002302E8 /* NaturalLanguageTime.swift in Sources */,
-				C310D0B52112B7CA002302E8 /* TodayViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C310D0E82112C453002302E8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C310D0FE2112D3EB002302E8 /* NaturalLanguageTime.swift in Sources */,
-				C310D0F12112C453002302E8 /* TVViewController.swift in Sources */,
-				C310D0EF2112C453002302E8 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C35A85AF21121A0B0053AB48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C310D0C52112BA54002302E8 /* NaturalLanguageTime.swift in Sources */,
-				C35A85CB211225340053AB48 /* ViewController.swift in Sources */,
+				C3E7A264213378F600724CCB /* NatLangViewController.swift in Sources */,
 				C35A85D3211225470053AB48 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37132FB2132809000C8282A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C37133252132821700C8282A /* NaturalLanguageTime.swift in Sources */,
+				C37133022132809000C8282A /* AppDelegate.swift in Sources */,
+				C3E7A26521337D0200724CCB /* NatLangViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		C310D0BB2112B7CA002302E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C310D0AE2112B7CA002302E8 /* TodayView */;
-			targetProxy = C310D0BA2112B7CA002302E8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		C310D0B62112B7CA002302E8 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C310D0B72112B7CA002302E8 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-		C310D0F22112C453002302E8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C310D0F32112C453002302E8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C35A85D42112255F0053AB48 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C35A85D52112255F0053AB48 /* Base */,
+				C37132F821327D9700C8282A /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -361,86 +252,22 @@
 		C35A85D62112255F0053AB48 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C35A85D72112255F0053AB48 /* Base */,
+				C37132F921327D9700C8282A /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C371331C2132816400C8282A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C371331D2132816400C8282A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C310D0BD2112B7CA002302E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69RV8YV62P;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = TodayView/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.TodayView";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		C310D0BE2112B7CA002302E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69RV8YV62P;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = TodayView/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.TodayView";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		C310D0F92112C455002302E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69RV8YV62P;
-				INFOPLIST_FILE = "Lazy Clock TV/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock-TV";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-			};
-			name = Debug;
-		};
-		C310D0FA2112C455002302E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69RV8YV62P;
-				INFOPLIST_FILE = "Lazy Clock TV/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock-TV";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
-			};
-			name = Release;
-		};
 		C35A85C321121A0B0053AB48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -562,6 +389,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = LazyClock;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69RV8YV62P;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -570,7 +398,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Lazy Clock/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -582,6 +410,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = LazyClock;
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69RV8YV62P;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -590,34 +419,50 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Lazy Clock/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
+		C371330C2132809200C8282A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69RV8YV62P;
+				INFOPLIST_FILE = "Lazy Clock TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+			};
+			name = Debug;
+		};
+		C371330D2132809200C8282A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69RV8YV62P;
+				INFOPLIST_FILE = "Lazy Clock TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C310D0BF2112B7CA002302E8 /* Build configuration list for PBXNativeTarget "TodayView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C310D0BD2112B7CA002302E8 /* Debug */,
-				C310D0BE2112B7CA002302E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C310D0F82112C455002302E8 /* Build configuration list for PBXNativeTarget "Lazy Clock TV" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C310D0F92112C455002302E8 /* Debug */,
-				C310D0FA2112C455002302E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C35A85AE21121A0B0053AB48 /* Build configuration list for PBXProject "Lazy Clock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -632,6 +477,15 @@
 			buildConfigurations = (
 				C35A85C621121A0B0053AB48 /* Debug */,
 				C35A85C721121A0B0053AB48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C371330B2132809200C8282A /* Build configuration list for PBXNativeTarget "Lazy Clock TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C371330C2132809200C8282A /* Debug */,
+				C371330D2132809200C8282A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
