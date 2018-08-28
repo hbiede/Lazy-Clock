@@ -61,7 +61,7 @@ class NatLangViewController: UIViewController {
         // Sets defaults for the timeLbl
         timeLbl.adjustsFontSizeToFitWidth = true
         timeLbl.adjustsFontForContentSizeCategory = true
-        NSLog("Lazy Clock Launched Successfully")
+        os_log("Lazy Clock Launched Successfully")
 
         // Starts the clock on updating every second
         updateTime()
@@ -103,7 +103,6 @@ class NatLangViewController: UIViewController {
 
     #if os(iOS)
     private func donateInteraction() {
-        print("Hey")
         let intent = LazyClockIntent()
 
         intent.suggestedInvocationPhrase = "Lazy Time"
@@ -158,7 +157,6 @@ class NatLangViewController: UIViewController {
 
     /// Rotates colors on single finger touch and saves the color to UserDefaults.
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
-        print(colorRotationIndex)
         impactor.impactOccurred()
         colorRotationIndex += 1
         if (colorRotationIndex == colorRotation.count) {
