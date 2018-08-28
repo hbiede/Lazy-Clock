@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>INEnums</key>
+	<array/>
+	<key>INIntentDefinitionModelVersion</key>
+	<string>1.0</string>
+	<key>INIntentDefinitionSystemVersion</key>
+	<string>18A353d</string>
+	<key>INIntentDefinitionToolsBuildVersion</key>
+	<string>10L213o</string>
+	<key>INIntentDefinitionToolsVersion</key>
+	<string>10.0</string>
+	<key>INIntents</key>
+	<array>
+		<dict>
+			<key>INIntentCategory</key>
+			<string>information</string>
+			<key>INIntentDescription</key>
+			<string>The current time in natural language</string>
+			<key>INIntentDescriptionID</key>
+			<string>87RuoU</string>
+			<key>INIntentLastParameterTag</key>
+			<integer>1</integer>
+			<key>INIntentName</key>
+			<string>LazyClock</string>
+			<key>INIntentParameterCombinations</key>
+			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string>Natural Language Time</string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>AIKV6M</string>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Current Time</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>mqU4zW</string>
+				</dict>
+			</dict>
+			<key>INIntentParameters</key>
+			<array/>
+			<key>INIntentResponse</key>
+			<dict>
+				<key>INIntentResponseCodes</key>
+				<array>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>Error. Time Doesn't Exist.</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>jYKF8r</string>
+						<key>INIntentResponseCodeName</key>
+						<string>failure</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeFormatString</key>
+						<string>${timeResponse}</string>
+						<key>INIntentResponseCodeFormatStringID</key>
+						<string>zzKCgD</string>
+						<key>INIntentResponseCodeName</key>
+						<string>success</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
+					</dict>
+				</array>
+				<key>INIntentResponseLastParameterTag</key>
+				<integer>1</integer>
+				<key>INIntentResponseParameters</key>
+				<array>
+					<dict>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>1</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>timeResponse</string>
+						<key>INIntentResponseParameterSupportsMultipleValues</key>
+						<false/>
+						<key>INIntentResponseParameterTag</key>
+						<integer>1</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
+					</dict>
+				</array>
+			</dict>
+			<key>INIntentRestrictions</key>
+			<integer>0</integer>
+			<key>INIntentTitle</key>
+			<string>Lazy Clock</string>
+			<key>INIntentTitleID</key>
+			<string>AtYkCo</string>
+			<key>INIntentType</key>
+			<string>Custom</string>
+			<key>INIntentUserConfirmationRequired</key>
+			<false/>
+			<key>INIntentVerb</key>
+			<string>View</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -8,6 +8,10 @@
 
 import Foundation
 import UIKit
+#if os(iOS)
+import Intents
+import os.log
+#endif
 
 class NatLangViewController: UIViewController {
     /// IBOutlets
@@ -35,7 +39,7 @@ class NatLangViewController: UIViewController {
     /// DateFormatter to be used to update the time, either to the form of short or long form time.
     let dForm: DateFormatter = {
         let temp = DateFormatter()
-        temp.dateFormat = "hh:mm:ss"
+        temp.dateFormat = "HH:mm:ss"
         return temp
     }()
 
@@ -45,14 +49,19 @@ class NatLangViewController: UIViewController {
         #if os(iOS)
         // Loads saved data for the clock
         colorRotationIndex = userSettings.integer(forKey: "LazyClock-ColorIndex")
+        if colorRotationIndex >= colorRotation.count || colorRotationIndex < 0 {
+            colorRotationIndex = 0
+        }
         updateColor()
         isShortLangDisplay = userSettings.bool(forKey: "LazyClock-LazyTimeInactive")
+
+        donateInteraction()
         #endif
 
         // Sets defaults for the timeLbl
         timeLbl.adjustsFontSizeToFitWidth = true
         timeLbl.adjustsFontForContentSizeCategory = true
-        print("Lazy Clock Launched Successfully")
+        NSLog("Lazy Clock Launched Successfully")
 
         // Starts the clock on updating every second
         updateTime()
@@ -93,6 +102,25 @@ class NatLangViewController: UIViewController {
     }
 
     #if os(iOS)
+    private func donateInteraction() {
+        print("Hey")
+        let intent = LazyClockIntent()
+
+        intent.suggestedInvocationPhrase = "Lazy Time"
+
+        let interaction = INInteraction(intent: intent, response: nil)
+
+        interaction.donate { (error) in
+            if error != nil {
+                if let error = error as NSError? {
+                    os_log("Interaction donation failed: %@", log: OSLog.default, type: .error, error)
+                }
+            } else {
+                os_log("Successfully donated interaction")
+            }
+        }
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         if userSettings.bool(forKey: "LazyClock-LazyTimeInactive") != isShortLangDisplay {
             shortTimeToggle()
@@ -108,15 +136,15 @@ class NatLangViewController: UIViewController {
     func updateColor() {
         if (isShortLangDisplay)
         {
+            viewBG.backgroundColor = UIColor.black
+            timeLbl.textColor = UIColor.white
+        } else {
             timeLbl.textColor = colorRotation[colorRotationIndex]
             if (timeLbl.textColor == UIColor.black) {
                 viewBG.backgroundColor = UIColor.white
             } else {
                 viewBG.backgroundColor = UIColor.black
             }
-        } else {
-            viewBG.backgroundColor = UIColor.black
-            timeLbl.textColor = UIColor.white
         }
     }
 
@@ -130,13 +158,12 @@ class NatLangViewController: UIViewController {
 
     /// Rotates colors on single finger touch and saves the color to UserDefaults.
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
+        print(colorRotationIndex)
         impactor.impactOccurred()
-        if (timeLbl.textColor == colorRotation.last) {
+        colorRotationIndex += 1
+        if (colorRotationIndex == colorRotation.count) {
             colorRotationIndex = 0
-        } else {
-            colorRotationIndex += 1
         }
-
         updateColor()
         userSettings.set(colorRotationIndex, forKey: "LazyClock-ColorIndex")
     }

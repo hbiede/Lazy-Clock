@@ -59,7 +59,7 @@ open class NaturalLanguageTime {
                 if (minuteValue == 60) {
                     hourString = (hours! == 23 ? hourConversion[0] : hourConversion[hours! + 1])!
                 }
-                if (hours! == 0 || hours! == 12)
+                if (hours! == 23 || hours! == 11 || hours! == 0 || hours! == 12)
                 {
                     returnStatement = "\(hourString)"
                 } else {
@@ -81,7 +81,7 @@ open class NaturalLanguageTime {
                 hourString = (hours! == 23 ? hourConversion[0] : hourConversion[hours! + 1])!
                 returnStatement = "5 til \(hourString)"
             default:
-                returnStatement = "\(hourString) \(minuteValue)"
+                returnStatement = (hours! == 12 || hours! == 0) ? "twelve \(minuteValue)" : "\(hourString) \(minuteValue)"
             }
 
             return returnStatement.capitalized

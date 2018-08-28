@@ -16,7 +16,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     /// DateFormatter to be used to update the time, either to the form of short or long form time.
     let dForm: DateFormatter = {
         let temp = DateFormatter()
-        temp.dateFormat = "hh:mm:ss"
+        temp.dateFormat = "HH:mm"
         return temp
     }()
     
