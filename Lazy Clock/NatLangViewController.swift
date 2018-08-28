@@ -13,35 +13,40 @@ class NatLangViewController: UIViewController {
     /// IBOutlets
     @IBOutlet var viewBG: UIView!
     @IBOutlet var timeLbl: UILabel!
+    @IBOutlet var timerBGHeightCon: NSLayoutConstraint!
 
     /// Dictionary of the UIColors to be used in the rotation of the clock display.
     let colorRotation = [UIColor.white, UIColor.red, UIColor.blue, UIColor.green, UIColor.black]
 
-    /// ImpactFeedbackGenerator to be used to create haptic feedback.
+    /// Index to use to cycle through colorRotation[] for the updating of the clock textColor. Defaults to 0.
+    var colorRotationIndex:Int = 0
+
     #if os(iOS)
+    /// Bool that determines if the clock will be displayed as natural language (False = Natural Time (Default), True = Short Time)
+    var isShortLangDisplay = false
+
+    /// ImpactFeedbackGenerator to be used to create haptic feedback.
     let impactor = UIImpactFeedbackGenerator.init()
-    #endif
 
     /// UserDefaults used to store settings for the app.
     let userSettings = UserDefaults.standard
+    #endif
 
     /// DateFormatter to be used to update the time, either to the form of short or long form time.
     let dForm: DateFormatter = {
         let temp = DateFormatter()
-        temp.dateFormat = "hh-mm"
+        temp.dateFormat = "hh:mm:ss"
         return temp
     }()
-
-    /// Index to use to cycle through colorRotation[] for the updating of the clock textColor. Defaults to 0.
-    var colorRotationIndex:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         #if os(iOS)
-        // Loads saved data for the color of the clock
+        // Loads saved data for the clock
         colorRotationIndex = userSettings.integer(forKey: "LazyClock-ColorIndex")
-        updateColor(colorRotation[colorRotationIndex])
+        updateColor()
+        isShortLangDisplay = userSettings.bool(forKey: "LazyClock-LazyTimeInactive")
         #endif
 
         // Sets defaults for the timeLbl
@@ -65,42 +70,78 @@ class NatLangViewController: UIViewController {
 
     /// Updates time displayed on display. Called from Timer in viewDidLoad().
     @objc func updateTime() {
+        #if os(iOS)
+        if (isShortLangDisplay)
+        {
+            let tempArray = dForm.string(from: Date()).split(separator: ":")
+            timeLbl.text = "\(tempArray[0]):\(tempArray[1])"
+            let seconds: CGFloat! = CGFloat(Int(tempArray[2]) ?? 0)
+            UIView.animate(withDuration: 1, animations: {
+                self.timerBGHeightCon.constant = CGFloat(seconds / 60.0 * self.viewBG.frame.height)
+                self.view.layoutIfNeeded()
+                })
+        } else {
+            var natTime = NaturalLanguageTime.NatTime()
+            natTime.timeString = dForm.string(from: Date())
+            timeLbl.text = natTime.getNatLangString()
+        }
+        #elseif os(tvOS)
         var natTime = NaturalLanguageTime.NatTime()
         natTime.timeString = dForm.string(from: Date())
         timeLbl.text = natTime.getNatLangString()
+        #endif
     }
 
     #if os(iOS)
-    /// Updates the color of timeLbl.textColor.
+    override func viewWillAppear(_ animated: Bool) {
+        if userSettings.bool(forKey: "LazyClock-LazyTimeInactive") != isShortLangDisplay {
+            shortTimeToggle()
+        }
+        updateTime()
+    }
+
+
+    /// Updates the color scheme.
     ///
     /// - Parameters:
-    ///   - newColor: A UIColor to change timeLbl.textColor to.
-    func updateColor(_ newColor: UIColor!) {
-        timeLbl.textColor = newColor
-        if (timeLbl.textColor == UIColor.black) {
-            viewBG.backgroundColor = UIColor.white
+    ///   - newColor: A UIColor to change the accent color to.
+    func updateColor() {
+        if (isShortLangDisplay)
+        {
+            timeLbl.textColor = colorRotation[colorRotationIndex]
+            if (timeLbl.textColor == UIColor.black) {
+                viewBG.backgroundColor = UIColor.white
+            } else {
+                viewBG.backgroundColor = UIColor.black
+            }
         } else {
             viewBG.backgroundColor = UIColor.black
+            timeLbl.textColor = UIColor.white
         }
     }
 
-    @IBAction func onTouch(_ sender: Any) {
-        touchRecognition(sender)
+    func shortTimeToggle() {
+        isShortLangDisplay.toggle()
+        if !isShortLangDisplay {
+            timerBGHeightCon.constant = 0.0
+        }
+        updateColor()
     }
 
     /// Rotates colors on single finger touch and saves the color to UserDefaults.
-    func touchRecognition(_ sender: Any) {
+    @IBAction func onTap(_ sender: UITapGestureRecognizer) {
+        impactor.impactOccurred()
         if (timeLbl.textColor == colorRotation.last) {
             colorRotationIndex = 0
         } else {
             colorRotationIndex += 1
         }
 
-
-        impactor.impactOccurred()
-
-        updateColor(colorRotation[colorRotationIndex])
+        updateColor()
         userSettings.set(colorRotationIndex, forKey: "LazyClock-ColorIndex")
+    }
+    @IBAction func onSwipeUp(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
     }
     #endif
 }

@@ -12,7 +12,7 @@ open class NaturalLanguageTime {
 
     /// Creates a new NatTime object to be used to convert a time to a natural langauge output.
     ///
-    /// Takes an input of the form 'hh-mm' to create a natural language version of the time, ie an input of "16-30"
+    /// Takes an input of the form 'hh:mm' or 'hh:mm:ss' to create a natural language version of the time, ie an input of "16:30"
     /// would yield "half past 4"
     public struct NatTime {
         private let hourConversion = [0: "Midnight", 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine", 10: "Ten", 11: "Eleven", 12: "Noon", 13: "One", 14: "Two", 15: "Three", 16: "Four", 17: "Five", 18: "Six", 19: "Seven", 20: "Eight", 21: "Nine", 22: "Ten", 23: "Eleven"]
@@ -23,7 +23,7 @@ open class NaturalLanguageTime {
                 return (hours == nil || minutes == nil) ? "Default Time" : "\(String(describing: hours!))-\(String(describing: minutes!))"
             }
             set {
-                let tempArray = newValue.split(separator: "-")
+                let tempArray = newValue.split(separator: ":")
                 hours = Int(tempArray[0]) ?? nil
                 if tempArray.count > 1 {
                     minutes = Int(tempArray[1]) ?? nil

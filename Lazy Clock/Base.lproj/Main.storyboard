@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad10_5" orientation="portrait">
+    <device id="ipad12_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,11 +14,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NatLangViewController" customModule="Lazy_Clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kz-4D-lJs" userLabel="TimerColorBG">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="0.0"/>
+                                <color key="backgroundColor" red="0.087648084977236973" green="0.59239351256449058" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="K0Y-L0-FA9"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lbl" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1p-fy-tVn">
-                                <rect key="frame" x="0.0" y="44" width="834" height="1034"/>
+                                <rect key="frame" x="0.0" y="53" width="1024" height="1224"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
                                 <viewLayoutGuide key="safeArea" id="KPI-Qf-597"/>
@@ -33,10 +40,15 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="9kz-4D-lJs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Hl-uJ-JmW"/>
+                            <constraint firstAttribute="trailing" secondItem="9kz-4D-lJs" secondAttribute="trailing" id="KKI-aM-usO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="timeLbl" destination="m1p-fy-tVn" id="ZqQ-e3-B5B"/>
+                        <outlet property="timerBGHeightCon" destination="K0Y-L0-FA9" id="Xch-oj-sJN"/>
                         <outlet property="viewBG" destination="8bC-Xf-vdC" id="uab-2a-FId"/>
                     </connections>
                 </viewController>
@@ -46,40 +58,36 @@
                         <action selector="onTap:" destination="BYZ-38-t0r" id="fmq-Ds-jGC"/>
                     </connections>
                 </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="uBy-uo-50X">
+                <swipeGestureRecognizer direction="up" id="uBy-uo-50X">
                     <connections>
+                        <action selector="onSwipeUp:" destination="BYZ-38-t0r" id="4In-M4-CAg"/>
                         <segue destination="5ms-S4-WX6" kind="presentation" id="juS-51-z8D"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="131.52709359605913"/>
+            <point key="canvasLocation" x="131.8840579710145" y="130.43478260869566"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="hq9-Ld-Q6X">
             <objects>
                 <viewController id="5ms-S4-WX6" customClass="SettingsViewController" customModule="Lazy_Clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O9H-lq-r8E" userLabel="SettingsViewBG">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lazy Clock gives you a view of the time that sounds more naturally than a standard 5:28, instead giving you &quot;Half Past Five&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-sg-2Vf">
-                                <rect key="frame" x="40" y="188" width="751" height="225"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6a6-Fi-Ewt">
-                                <rect key="frame" x="291" y="716" width="240" height="128"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vc-hd-aee" userLabel="SwitchView">
+                                <rect key="frame" x="371" y="1217" width="280" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enc-RB-dr0">
-                                        <rect key="frame" x="185" y="48" width="48" height="31"/>
+                                        <rect key="frame" x="207" y="49" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                         <connections>
                                             <action selector="onChanged:" destination="5ms-S4-WX6" eventType="valueChanged" id="ZdP-mO-wES"/>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lazy Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQ2-hj-B0V">
-                                        <rect key="frame" x="8" y="53" width="81" height="21"/>
+                                        <rect key="frame" x="33" y="54" width="96" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
@@ -87,33 +95,35 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="IF6-Mr-gWz"/>
-                                </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lazy Clock gives you a view of the time that sounds more naturally than a standard 5:28, instead giving you &quot;Half Past Five&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-sg-2Vf">
+                                <rect key="frame" x="20" y="57" width="984" height="971"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="6a6-Fi-Ewt" firstAttribute="top" secondItem="PTP-sg-2Vf" secondAttribute="bottom" constant="85" id="ni1-1u-fku"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HRq-my-Q36"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="iJU-Or-R5q" appends="YES" id="yoe-B2-k2s"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="descriptionView" destination="PTP-sg-2Vf" id="ZHU-YJ-xtB"/>
-                        <outlet property="miniView" destination="6a6-Fi-Ewt" id="qcW-sx-5yw"/>
-                        <outlet property="settingsLbl" destination="zQ2-hj-B0V" id="bd8-Vi-rmT"/>
                         <outlet property="settingsSwitch" destination="enc-RB-dr0" id="Ia8-95-7qu"/>
-                        <outlet property="settingsViewBG" destination="O9H-lq-r8E" id="ZT9-lc-sz9"/>
+                        <outlet property="settingsViewBG" destination="O9H-lq-r8E" id="afU-iU-vwe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jdz-NH-u7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="iJU-Or-R5q"/>
+                <swipeGestureRecognizer direction="down" id="iJU-Or-R5q">
+                    <connections>
+                        <action selector="onSwipeDown:" destination="5ms-S4-WX6" id="URT-Jh-xsZ"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="848.79999999999995" y="124.8768472906404"/>
+            <point key="canvasLocation" x="837.890625" y="128.69692532942898"/>
         </scene>
     </scenes>
 </document>
