@@ -27,7 +27,7 @@ class NatLangViewController: UIViewController {
 
     #if os(iOS)
     /// Bool that determines if the clock will be displayed as natural language (False = Natural Time (Default), True = Short Time)
-    var isShortLangDisplay = false
+    static var isShortLangDisplay = false
 
     /// ImpactFeedbackGenerator to be used to create haptic feedback.
     let impactor = UIImpactFeedbackGenerator.init()
@@ -53,7 +53,7 @@ class NatLangViewController: UIViewController {
             colorRotationIndex = 0
         }
         updateColor()
-        isShortLangDisplay = userSettings.bool(forKey: "LazyClock-LazyTimeInactive")
+        NatLangViewController.isShortLangDisplay = userSettings.bool(forKey: "LazyClock-LazyTimeInactive")
 
         donateInteraction()
         #endif
@@ -80,7 +80,7 @@ class NatLangViewController: UIViewController {
     /// Updates time displayed on display. Called from Timer in viewDidLoad().
     @objc func updateTime() {
         #if os(iOS)
-        if (isShortLangDisplay)
+        if (NatLangViewController.isShortLangDisplay)
         {
             let tempArray = dForm.string(from: Date()).split(separator: ":")
             timeLbl.text = "\(tempArray[0]):\(tempArray[1])"
@@ -90,6 +90,9 @@ class NatLangViewController: UIViewController {
                 self.view.layoutIfNeeded()
                 })
         } else {
+            if (self.timerBGHeightCon.constant != 0) {
+                self.timerBGHeightCon.constant = 0
+            }
             var natTime = NaturalLanguageTime.NatTime()
             natTime.timeString = dForm.string(from: Date())
             timeLbl.text = natTime.getNatLangString()
@@ -112,7 +115,7 @@ class NatLangViewController: UIViewController {
         interaction.donate { (error) in
             if error != nil {
                 if let error = error as NSError? {
-                    os_log("Interaction donation failed: %@", log: OSLog.default, type: .error, error)
+                    os_log("Interaction donation failed: %@", log: .default, type: .error, error)
                 }
             } else {
                 os_log("Successfully donated interaction")
@@ -120,39 +123,17 @@ class NatLangViewController: UIViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        if userSettings.bool(forKey: "LazyClock-LazyTimeInactive") != isShortLangDisplay {
-            shortTimeToggle()
-        }
-        updateTime()
-    }
-
-
     /// Updates the color scheme.
     ///
     /// - Parameters:
     ///   - newColor: A UIColor to change the accent color to.
     func updateColor() {
-        if (isShortLangDisplay)
-        {
-            viewBG.backgroundColor = UIColor.black
-            timeLbl.textColor = UIColor.white
+        timeLbl.textColor = colorRotation[colorRotationIndex]
+        if (timeLbl.textColor == .black) {
+            viewBG.backgroundColor = .white
         } else {
-            timeLbl.textColor = colorRotation[colorRotationIndex]
-            if (timeLbl.textColor == UIColor.black) {
-                viewBG.backgroundColor = UIColor.white
-            } else {
-                viewBG.backgroundColor = UIColor.black
-            }
+            viewBG.backgroundColor = .black
         }
-    }
-
-    func shortTimeToggle() {
-        isShortLangDisplay.toggle()
-        if !isShortLangDisplay {
-            timerBGHeightCon.constant = 0.0
-        }
-        updateColor()
     }
 
     /// Rotates colors on single finger touch and saves the color to UserDefaults.

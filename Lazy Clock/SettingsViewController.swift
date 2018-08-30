@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController {
 
     @IBAction func onChanged(_ sender: UISwitch) {
         UserDefaults.standard.set(!settingsSwitch.isOn, forKey: "LazyClock-LazyTimeInactive")
+        NatLangViewController.isShortLangDisplay = !settingsSwitch.isOn
     }
     @IBAction func onSwipeDown(_ sender: UISwipeGestureRecognizer) {
         self.dismiss(animated: true, completion: nil)
