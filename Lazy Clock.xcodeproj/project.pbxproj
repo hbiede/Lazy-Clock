@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C310D0C52112BA54002302E8 /* NaturalLanguageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */; };
 		C310D0FC2112C47A002302E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35A85CC211225460053AB48 /* Assets.xcassets */; };
+		C31F82DD213C5DB100294F4F /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31F82DC213C5DB100294F4F /* Stickers.xcassets */; };
+		C31F82E1213C5DB100294F4F /* Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C31F82DA213C5DAF00294F4F /* Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C31F82E6213C72AD00294F4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C31F82E5213C72AD00294F4F /* LaunchScreen.storyboard */; };
 		C332BA302134F1A000276726 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C332BA2F2134F1A000276726 /* NotificationCenter.framework */; };
 		C332BA332134F1A000276726 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C332BA322134F1A000276726 /* TodayViewController.swift */; };
 		C332BA362134F1A000276726 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C332BA342134F1A000276726 /* MainInterface.storyboard */; };
@@ -32,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C31F82DF213C5DB100294F4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C35A85AB21121A0B0053AB48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C31F82D9213C5DAF00294F4F;
+			remoteInfo = Stickers;
+		};
 		C332BA382134F1A000276726 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C35A85AB21121A0B0053AB48 /* Project object */;
@@ -55,6 +65,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				C31F82E1213C5DB100294F4F /* Stickers.appex in Embed App Extensions */,
 				C332BA3A2134F1A000276726 /* TodayView.appex in Embed App Extensions */,
 				C332BA982134F83900276726 /* LazyIntent.appex in Embed App Extensions */,
 			);
@@ -64,6 +75,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C31F82DA213C5DAF00294F4F /* Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Stickers.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31F82DC213C5DB100294F4F /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
+		C31F82DE213C5DB100294F4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C31F82E5213C72AD00294F4F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C332BA2E2134F1A000276726 /* TodayView.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayView.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C332BA2F2134F1A000276726 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		C332BA322134F1A000276726 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +148,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C31F82DB213C5DAF00294F4F /* Stickers */ = {
+			isa = PBXGroup;
+			children = (
+				C31F82DC213C5DB100294F4F /* Stickers.xcassets */,
+				C31F82DE213C5DB100294F4F /* Info.plist */,
+			);
+			path = Stickers;
+			sourceTree = "<group>";
+		};
 		C332BA312134F1A000276726 /* TodayView */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,9 +181,10 @@
 			isa = PBXGroup;
 			children = (
 				C35A85B521121A0B0053AB48 /* Lazy Clock */,
-				C37133002132809000C8282A /* Lazy Clock TV */,
 				C332BA312134F1A000276726 /* TodayView */,
 				C332BA822134F83900276726 /* LazyIntent */,
+				C31F82DB213C5DAF00294F4F /* Stickers */,
+				C37133002132809000C8282A /* Lazy Clock TV */,
 				C310D0B02112B7CA002302E8 /* Frameworks */,
 				C35A85B421121A0B0053AB48 /* Products */,
 			);
@@ -172,6 +197,7 @@
 				C37132FF2132809000C8282A /* Lazy Clock TV.app */,
 				C332BA2E2134F1A000276726 /* TodayView.appex */,
 				C332BA812134F83900276726 /* LazyIntent.appex */,
+				C31F82DA213C5DAF00294F4F /* Stickers.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +212,7 @@
 				C344ADEB2134B3C000638455 /* SettingsViewController.swift */,
 				C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */,
 				C35A85D42112255F0053AB48 /* Main.storyboard */,
+				C31F82E5213C72AD00294F4F /* LaunchScreen.storyboard */,
 				C35A85CD211225460053AB48 /* Info.plist */,
 				C332BAA92134FFF800276726 /* Intents.intentdefinition */,
 			);
@@ -206,6 +233,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C31F82D9213C5DAF00294F4F /* Stickers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C31F82E4213C5DB100294F4F /* Build configuration list for PBXNativeTarget "Stickers" */;
+			buildPhases = (
+				C31F82D8213C5DAF00294F4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stickers;
+			productName = Stickers;
+			productReference = C31F82DA213C5DAF00294F4F /* Stickers.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
+		};
 		C332BA2D2134F1A000276726 /* TodayView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C332BA3B2134F1A000276726 /* Build configuration list for PBXNativeTarget "TodayView" */;
@@ -254,6 +296,7 @@
 			dependencies = (
 				C332BA392134F1A000276726 /* PBXTargetDependency */,
 				C332BA972134F83900276726 /* PBXTargetDependency */,
+				C31F82E0213C5DB100294F4F /* PBXTargetDependency */,
 			);
 			name = "Lazy Clock";
 			productName = "Lazy Time";
@@ -287,6 +330,9 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Hundter Biede";
 				TargetAttributes = {
+					C31F82D9213C5DAF00294F4F = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					C332BA2D2134F1A000276726 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -319,14 +365,23 @@
 			projectRoot = "";
 			targets = (
 				C35A85B221121A0B0053AB48 /* Lazy Clock */,
-				C37132FE2132809000C8282A /* Lazy Clock TV */,
 				C332BA2D2134F1A000276726 /* TodayView */,
 				C332BA802134F83900276726 /* LazyIntent */,
+				C31F82D9213C5DAF00294F4F /* Stickers */,
+				C37132FE2132809000C8282A /* Lazy Clock TV */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C31F82D8213C5DAF00294F4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31F82DD213C5DB100294F4F /* Stickers.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C332BA2C2134F1A000276726 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,6 +403,7 @@
 			files = (
 				C35A85D82112255F0053AB48 /* Main.storyboard in Resources */,
 				C310D0FC2112C47A002302E8 /* Assets.xcassets in Resources */,
+				C31F82E6213C72AD00294F4F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +464,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C31F82E0213C5DB100294F4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C31F82D9213C5DAF00294F4F /* Stickers */;
+			targetProxy = C31F82DF213C5DB100294F4F /* PBXContainerItemProxy */;
+		};
 		C332BA392134F1A000276726 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C332BA2D2134F1A000276726 /* TodayView */;
@@ -448,6 +509,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C31F82E2213C5DB100294F4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69RV8YV62P;
+				INFOPLIST_FILE = Stickers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.iOS.Stickers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C31F82E3213C5DB100294F4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 69RV8YV62P;
+				INFOPLIST_FILE = Stickers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.iOS.Stickers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C332BA3C2134F1A000276726 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -705,6 +796,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C31F82E4213C5DB100294F4F /* Build configuration list for PBXNativeTarget "Stickers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31F82E2213C5DB100294F4F /* Debug */,
+				C31F82E3213C5DB100294F4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C332BA3B2134F1A000276726 /* Build configuration list for PBXNativeTarget "TodayView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

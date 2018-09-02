@@ -82,7 +82,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enc-RB-dr0">
-                                        <rect key="frame" x="207" y="49" width="51" height="31"/>
+                                        <rect key="frame" x="207" y="49" width="50" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                         <connections>
                                             <action selector="onChanged:" destination="5ms-S4-WX6" eventType="valueChanged" id="ZdP-mO-wES"/>
