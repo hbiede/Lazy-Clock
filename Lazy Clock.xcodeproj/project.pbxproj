@@ -84,7 +84,6 @@
 		C332BA322134F1A000276726 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		C332BA352134F1A000276726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C332BA372134F1A000276726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C332BA442134F37000276726 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		C332BA582134F61500276726 /* Lazy Clock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Lazy Clock.entitlements"; sourceTree = "<group>"; };
 		C332BA812134F83900276726 /* LazyIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LazyIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C332BA832134F83900276726 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
@@ -143,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				C332BA2F2134F1A000276726 /* NotificationCenter.framework */,
-				C332BA442134F37000276726 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
