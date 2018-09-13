@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController {
 
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         settingsSwitch.isOn = !UserDefaults.standard.bool(forKey: "LazyClock-LazyTimeInactive")
     }
 

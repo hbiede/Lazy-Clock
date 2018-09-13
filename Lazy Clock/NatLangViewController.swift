@@ -19,13 +19,13 @@ class NatLangViewController: UIViewController {
     @IBOutlet var timeLbl: UILabel!
     @IBOutlet var timerBGHeightCon: NSLayoutConstraint!
 
+    #if os(iOS)
     /// Dictionary of the UIColors to be used in the rotation of the clock display.
     let colorRotation = [UIColor.white, UIColor.red, UIColor.blue, UIColor.green, UIColor.black]
 
     /// Index to use to cycle through colorRotation[] for the updating of the clock textColor. Defaults to 0.
     var colorRotationIndex:Int = 0
 
-    #if os(iOS)
     /// Bool that determines if the clock will be displayed as natural language (False = Natural Time (Default), True = Short Time)
     static var isShortLangDisplay = false
 
