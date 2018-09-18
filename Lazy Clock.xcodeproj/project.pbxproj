@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C309EA7C215147140074AEAD /* LazyClockSpecifiedIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C309EA7B215147140074AEAD /* LazyClockSpecifiedIntentHandler.swift */; };
 		C310D0C52112BA54002302E8 /* NaturalLanguageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */; };
 		C310D0FC2112C47A002302E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35A85CC211225460053AB48 /* Assets.xcassets */; };
 		C31F82DD213C5DB100294F4F /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C31F82DC213C5DB100294F4F /* Stickers.xcassets */; };
@@ -85,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C309EA7B215147140074AEAD /* LazyClockSpecifiedIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyClockSpecifiedIntentHandler.swift; sourceTree = "<group>"; };
 		C31F82DA213C5DAF00294F4F /* Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Stickers.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C31F82DC213C5DB100294F4F /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
 		C31F82DE213C5DB100294F4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				C332BA832134F83900276726 /* IntentHandler.swift */,
 				C332BAA62134F9AD00276726 /* LazyClockIntentHandler.swift */,
+				C309EA7B215147140074AEAD /* LazyClockSpecifiedIntentHandler.swift */,
 				C332BA852134F83900276726 /* Info.plist */,
 			);
 			path = LazyIntent;
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C309EA7C215147140074AEAD /* LazyClockSpecifiedIntentHandler.swift in Sources */,
 				C332BAA22134F8AD00276726 /* NaturalLanguageTime.swift in Sources */,
 				C332BA842134F83900276726 /* IntentHandler.swift in Sources */,
 				C332BAAB213500C900276726 /* Intents.intentdefinition in Sources */,

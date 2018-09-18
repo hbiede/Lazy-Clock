@@ -27,5 +27,4 @@ class LazyClockIntentHandler: NSObject, LazyClockIntentHandling {
         natTime.timeString = dForm.string(from: Date())
         completion(LazyClockIntentResponse.success(timeResponse: natTime.getNatLangString()))
     }
-
 }
