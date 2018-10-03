@@ -84,7 +84,7 @@ class NatLangViewController: UIViewController {
         {
             let tempArray = dForm.string(from: Date()).split(separator: ":")
             timeLbl.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
-            let seconds: CGFloat! = CGFloat(Int(tempArray[2]) ?? 0)
+            let seconds: CGFloat! = CGFloat((Int(tempArray[2]) ?? 0) + 1)
             UIView.animate(withDuration: 1, animations: {
                 self.timerBGHeightCon.constant = seconds / 60.0 * self.viewBG.frame.height
                 self.view.layoutIfNeeded()
