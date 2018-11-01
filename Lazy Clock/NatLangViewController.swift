@@ -106,29 +106,13 @@ class NatLangViewController: UIViewController {
 
     #if os(iOS)
     private func donateInteraction() {
-        let intent = LazyClockIntent()
+        let intent = LazyClockSpecifiedIntent()
 
-        intent.suggestedInvocationPhrase = "Lazy Time"
+        intent.suggestedInvocationPhrase = "Naturalize Clipboard"
 
         let interaction = INInteraction(intent: intent, response: nil)
 
         interaction.donate { (error) in
-            if error != nil {
-                if let error = error as NSError? {
-                    os_log("Default interaction donation failed: %@", log: .default, type: .error, error)
-                }
-            } else {
-                os_log("Successfully donated default interaction")
-            }
-        }
-
-        let intent2 = LazyClockSpecifiedIntent()
-
-        intent2.suggestedInvocationPhrase = "Naturalize Clipboard"
-
-        let interaction2 = INInteraction(intent: intent2, response: nil)
-
-        interaction2.donate { (error) in
             if error != nil {
                 if let error = error as NSError? {
                     os_log("Clipboard interaction donation failed: %@", log: .default, type: .error, error)
