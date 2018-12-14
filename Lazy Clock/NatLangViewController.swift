@@ -36,6 +36,9 @@ class NatLangViewController: UIViewController {
     let userSettings = UserDefaults.standard
     #endif
 
+    /// Natural Laguage Formatter
+    var natTime = NaturalLanguageTime.NatTime()
+
     /// DateFormatter to be used to update the time, either to the form of short or long form time.
     let dForm: DateFormatter = {
         let temp = DateFormatter()
@@ -61,11 +64,12 @@ class NatLangViewController: UIViewController {
         // Sets defaults for the timeLbl
         timeLbl.adjustsFontSizeToFitWidth = true
         timeLbl.adjustsFontForContentSizeCategory = true
-        os_log("Lazy Clock Launched Successfully")
 
         // Starts the clock on updating every second
         updateTime()
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+
+        os_log("Lazy Clock Launched Successfully")
     }
 
     func viewSet(label: UILabel!, bg: UIView!) {
@@ -78,7 +82,8 @@ class NatLangViewController: UIViewController {
     }
 
     /// Updates time displayed on display. Called from Timer in viewDidLoad().
-    @objc func updateTime() {
+    @objc
+    func updateTime() {
         #if os(iOS)
         if (NatLangViewController.isShortLangDisplay)
         {
@@ -93,12 +98,10 @@ class NatLangViewController: UIViewController {
             if (self.timerBGHeightCon.constant != 0) {
                 self.timerBGHeightCon.constant = 0
             }
-            var natTime = NaturalLanguageTime.NatTime()
             natTime.timeString = dForm.string(from: Date())
             timeLbl.text = natTime.getNatLangString()
         }
         #elseif os(tvOS)
-        var natTime = NaturalLanguageTime.NatTime()
         natTime.timeString = dForm.string(from: Date())
         timeLbl.text = natTime.getNatLangString()
         #endif
@@ -124,9 +127,6 @@ class NatLangViewController: UIViewController {
     }
 
     /// Updates the color scheme.
-    ///
-    /// - Parameters:
-    ///   - newColor: A UIColor to change the accent color to.
     func updateColor() {
         timeLbl.textColor = colorRotation[colorRotationIndex]
         if (timeLbl.textColor == .black) {
