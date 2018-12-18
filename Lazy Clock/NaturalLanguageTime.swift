@@ -40,7 +40,10 @@ open class NaturalLanguageTime {
         }
 
         public init(){}
+    }
 
+
+    public extension NatTime {
         public func getNatLangString() -> String! {
             return natLangString
         }
