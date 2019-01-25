@@ -78,7 +78,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lazy Clock gives you a view of the time that sounds more naturally than a standard 5:28, instead giving you &quot;Half Past Five&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-sg-2Vf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lazy Clock gives you a view of the time that sounds more natural than a standard 5:28, instead giving you &quot;Half Past Five&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-sg-2Vf">
                                 <rect key="frame" x="20" y="20" width="280" height="258"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="258" id="PDx-tZ-azQ"/>
