@@ -15,8 +15,6 @@ open class NaturalLanguageTime {
     /// Takes an input of the form 'hh:mm' or 'hh:mm:ss' to create a natural language version of the time, ie an input of "16:30"
     /// would yield "half past 4"
     public struct NatTime {
-        private let hourConversion = [0: "Midnight", 1: "One", 2: "Two", 3: "Three", 4: "Four", 5: "Five", 6: "Six", 7: "Seven", 8: "Eight", 9: "Nine", 10: "Ten", 11: "Eleven", 12: "Noon", 13: "One", 14: "Two", 15: "Three", 16: "Four", 17: "Five", 18: "Six", 19: "Seven", 20: "Eight", 21: "Nine", 22: "Ten", 23: "Eleven"]
-        private let minuteConversion = [10: "Ten", 20: "Twenty", 25: "Twenty Five", 35: "Thirty Five", 40: "Forty"]
         private var hours:Int?, minutes:Int?
         private var natLangString:String! = "Default Time"
         public var timeString: String! {
@@ -26,6 +24,10 @@ open class NaturalLanguageTime {
             set {
                 let tempArray = newValue.split(separator: ":")
                 hours = Int(tempArray[0]) ?? nil
+                // Change 24 to 12 hour time
+                if (DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: Locale.current)!.contains("a") && hours! > 12) {
+                    hours = hours! - 12
+                }
                 if tempArray.count > 1 {
                     minutes = Int(tempArray[1]) ?? nil
                 } else {
@@ -40,10 +42,7 @@ open class NaturalLanguageTime {
         }
 
         public init(){}
-    }
-
-
-    public extension NatTime {
+        
         public func getNatLangString() -> String! {
             return natLangString
         }
@@ -52,43 +51,52 @@ open class NaturalLanguageTime {
             return Int(ceil(Double(inputNumber) / 5)) * 5
         }
 
-        func toNatLang() -> String {
-            guard var hourString = hourConversion[hours!] else { return "Default Time" }
-            guard var minuteValue = minutes else { return "Default Time" }
+        public func toNatLang() -> String {
+            guard var minuteValue = minutes else {
+                return "Default Time"
+            }
+            var hourAsString = NSLocalizedString(String(describing: hours!), comment:
+                "The current hour, spelled out")
+            let oneOClock = hours! == 1 || (hours! == 13 && !DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: Locale.current)!.contains("a"))
+            let midnightAsString = NSLocalizedString("0", comment: "midnight")
+            let nextHourAsString = NSLocalizedString(String(describing: hours! + 1), comment: "The next hour, spelled out")
             minuteValue = roundByFive(minuteValue)
-            var returnStatement:String
-
+            var returnStatementFormat:String
+            
             switch minuteValue {
             case 0, 60:
                 if (minuteValue == 60) {
-                    hourString = (hours! == 23 ? hourConversion[0] : hourConversion[hours! + 1])!
+                    hourAsString = (hours! == 23 ? midnightAsString : nextHourAsString)
                 }
                 if (hours! == 23 || hours! == 11 || hours! == 0 || hours! == 12)
                 {
-                    returnStatement = "\(hourString)"
+                    return hourAsString
                 } else {
-                    returnStatement = "\(hourString) o'clock"
+                    returnStatementFormat = NSLocalizedString(oneOClock ? "%@ o'clock-one" : "%@ o'clock", comment: "Time on the hour")
                 }
             case 5:
-                returnStatement = "Five past \(hourString)"
+                returnStatementFormat = NSLocalizedString(oneOClock ? "Five past %@-one" : "Five past %@", comment: "Five past the hour")
             case 15:
-                returnStatement = "Quarter past \(hourString)"
+                returnStatementFormat = NSLocalizedString(oneOClock ? "Quarter past %@-one" : "Quarter past %@", comment: "Quarter past the hour")
             case 30:
-                returnStatement = "Half past \(hourString)"
+                returnStatementFormat = NSLocalizedString(oneOClock ? "Half past %@-one" : "Half past %@", comment: "Half past the hour")
             case 45:
-                hourString = (hours! == 23 ? hourConversion[0] : hourConversion[hours! + 1])!
-                returnStatement = "Quarter til \(hourString)"
+                hourAsString = (hours! == 23 ? midnightAsString : nextHourAsString)
+                returnStatementFormat = NSLocalizedString(oneOClock ? "Quarter til %@-one" : "Five past %@", comment: "Quarter til the hour")
             case 50:
-                hourString = (hours! == 23 ? hourConversion[0] : hourConversion[hours! + 1])!
-                returnStatement = "Ten til \(hourString)"
+                hourAsString = (hours! == 23 ? midnightAsString : nextHourAsString)
+                returnStatementFormat = NSLocalizedString(oneOClock ? "Ten til %@-one" : "Ten til %@", comment: "Ten til the hour")
             case 55:
-                hourString = (hours! == 23 ? hourConversion[0] : hourConversion[hours! + 1])!
-                returnStatement = "Five til \(hourString)"
+                hourAsString = (hours! == 23 ? midnightAsString : nextHourAsString)
+                returnStatementFormat = NSLocalizedString(oneOClock ? "Five til %@-one" : "Five til %@", comment: "Five til the hour")
             default:
-                returnStatement = (hours! == 12 || hours! == 0) ? "Twelve \(minuteConversion[minuteValue] ?? "")" : "\(hourString) \(minuteConversion[minuteValue] ?? "")"
+                returnStatementFormat = NSLocalizedString(oneOClock ? "%@ %@-one" : "%@ %@", comment: "Default")
+                print(returnStatementFormat)
+                let minuteAsString = NSLocalizedString(String(describing: minuteValue), comment: "Minute Value")
+                return String.localizedStringWithFormat(returnStatementFormat, hourAsString, minuteAsString)
             }
-
-            return returnStatement.capitalized
+            
+            return String.localizedStringWithFormat(returnStatementFormat, hourAsString)
         }
     }
 }

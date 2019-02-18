@@ -1,0 +1,50 @@
+/* Hours as Strings */
+"0" = "Medianoche";
+"1" = "Una";
+"2" = "Dos";
+"3" = "Tres";
+"4" = "Cuatro";
+"5" = "Cinco";
+"6" = "Seis";
+"7" = "Siete";
+"8" = "Ocho";
+"9" = "Nueve";
+"10" = "Diez";
+"11" = "Once";
+"12" = "Mediadía";
+"13" = "Trece";
+"14" = "Catorce";
+"15" = "Quince";
+"16" = "Dieciseis";
+"17" = "Diecisiete";
+"18" = "Dieciocho";
+"19" = "Diecinueve";
+"20" = "Viente";
+"21" = "Vientiuno";
+"22" = "Vientidos";
+"23" = "Vientitrés";
+
+/* Minute Conversions */
+"25" = "Vienticinco";
+"35" = "Treinta y Cinco";
+"40" = "Cuarenta";
+
+/* Time Strings */
+"%@ o'clock" = "La %@";
+"Five past %@" = "%@ y Cinco";
+"Quarter past %@" = "%@ y Cuarto";
+"Half past %@" = "%@ y Media";
+"Quarter til %@" = "%@ Menos Cuarto";
+"Ten til %@" = "%@ Menos Diez";
+"Five til %@" = "%@ Menos Cinco";
+"%@ %@" = "%1$@ y %2$@"; // Default time. Can be flipped by changing 1 and 2. 1 is the hour as a word(s), 2 is the minutes. 5:10 displays as Five Ten in English
+
+/* One O'Clock Hour */
+"%@ o'clock-one" = "Las %@";
+"Five past %@-one" = "%@ y Cinco";
+"Quarter past %@-one" = "%@ y Cuarto";
+"Half past %@-one" = "%@ y Media";
+"Quarter til %@-one" = "%@ Menos Cuarto";
+"Ten til %@-one" = "%@ Menos Diez";
+"Five til %@-one" = "%@ Menos Cinco";
+"%@ %@-one" = "%1$@ y %2$@"; // Default time. Can be flipped by changing 1 and 2. 1 is the hour as a word(s), 2 is the minutes. 5:10 displays as Five Ten in English

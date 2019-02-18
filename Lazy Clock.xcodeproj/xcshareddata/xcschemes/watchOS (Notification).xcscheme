@@ -52,6 +52,16 @@
                ReferencedContainer = "container:Lazy Clock.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3DF128B8221A113B00F32DF2"
+               BuildableName = "Lazy ClockUITests.xctest"
+               BlueprintName = "Lazy ClockUITests"
+               ReferencedContainer = "container:Lazy Clock.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

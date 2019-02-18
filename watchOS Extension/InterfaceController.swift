@@ -47,6 +47,6 @@ class InterfaceController: WKInterfaceController {
     func updateTime() {
         var natTime = NaturalLanguageTime.NatTime()
         natTime.timeString = dForm.string(from: Date())
-        timeLbl.setText(natTime.getNatLangString())
+        timeLbl.setText(natTime.toNatLang())
     }
 }

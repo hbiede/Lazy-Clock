@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Lazy Clock gives you a view of the time that sounds more natural than a standard 5:28, instead giving you \"Half Past Five\""; ObjectID = "PTP-sg-2Vf"; Note = "SettingsInstructions"; */
+"PTP-sg-2Vf.text" = "Lazy Clock desplega el tiempo en frases mas natural. En lugar de 5:28, ves \"Cinco y Media\"";
+
+/* Class = "UILabel"; text = "lbl"; ObjectID = "m1p-fy-tVn"; */
+"m1p-fy-tVn.text" = "lbl";
+
+/* Class = "UILabel"; text = "Lazy Time"; ObjectID = "zQ2-hj-B0V"; */
+"zQ2-hj-B0V.text" = "Lazy Time";

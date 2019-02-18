@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "Lazy Clock gives you a view of the time that sounds more natural than a standard 5:28, instead giving you \"Half Past Five\""; ObjectID = "PTP-sg-2Vf"; Note = "SettingsInstructions"; */
+"PTP-sg-2Vf.text" = "Lazy Clock gives you a view of the time that sounds more natural than a standard 5:28, instead giving you \"Half Past Five\"";
+
+/* Class = "UILabel"; text = "lbl"; ObjectID = "m1p-fy-tVn"; */
+"m1p-fy-tVn.text" = "lbl";
+
+/* Class = "UILabel"; text = "Lazy Time"; ObjectID = "zQ2-hj-B0V"; */
+"zQ2-hj-B0V.text" = "Lazy Time";
+
+
+/* Hours as Strings */
+"0" = "Midnight";
+"1" = "One";
+"2" = "Two";
+"3" = "Three";
+"4" = "Four";
+"5" = "Five";
+"6" = "Six";
+"7" = "Seven";
+"8" = "Eight";
+"9" = "Nine";
+"10" = "Ten";
+"11" = "Eleven";
+"12" = "Noon";
+"13" = "One";
+"14" = "Two";
+"15" = "Three";
+"16" = "Four";
+"17" = "Five";
+"18" = "Six";
+"19" = "Seven";
+"20" = "Eight";
+"21" = "Nine";
+"22"  = "Ten";
+"23"  = "Eleven";
+
+/* Time Strings */
+"Quarter past %@" = "Test Successful %@";
