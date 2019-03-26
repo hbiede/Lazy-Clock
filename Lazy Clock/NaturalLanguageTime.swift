@@ -82,7 +82,7 @@ open class NaturalLanguageTime {
                 returnStatementFormat = NSLocalizedString(oneOClock ? "Half past %@-one" : "Half past %@", comment: "Half past the hour")
             case 45:
                 hourAsString = (hours! == 23 ? midnightAsString : nextHourAsString)
-                returnStatementFormat = NSLocalizedString(oneOClock ? "Quarter til %@-one" : "Five past %@", comment: "Quarter til the hour")
+                returnStatementFormat = NSLocalizedString(oneOClock ? "Quarter til %@-one" : "Quarter til %@", comment: "Quarter til the hour")
             case 50:
                 hourAsString = (hours! == 23 ? midnightAsString : nextHourAsString)
                 returnStatementFormat = NSLocalizedString(oneOClock ? "Ten til %@-one" : "Ten til %@", comment: "Ten til the hour")
