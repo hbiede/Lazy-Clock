@@ -14,27 +14,25 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var timeLbl: WKInterfaceLabel!
 
     /// DateFormatter to be used to update the time, either to the form of short or long form time.
-    let dForm: DateFormatter = {
+    let formatter: DateFormatter = {
         let temp = DateFormatter()
         temp.dateFormat = "HH:mm:ss"
         return temp
     }()
 
     override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        
         // Configure interface objects here.
+        super.awake(withContext: context)
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
         updateTime()
+        super.willActivate()
     }
 
     override func didAppear() {
         super.didAppear()
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
     }
     
     override func didDeactivate() {
@@ -42,11 +40,10 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
-    /// Updates time displayed on display. Called from Timer in viewDidLoad().
-    @objc
+    /// Updates time displayed on display. Runs once on watchOS (Working under the assumption that the watch face will not be shown for an extended period of time
     func updateTime() {
         var natTime = NaturalLanguageTime.NatTime()
-        natTime.timeString = dForm.string(from: Date())
+        natTime.timeString = formatter.string(from: Date())
         timeLbl.setText(natTime.toNatLang())
     }
 }

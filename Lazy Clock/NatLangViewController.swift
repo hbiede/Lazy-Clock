@@ -21,7 +21,7 @@ class NatLangViewController: UIViewController {
 
     #if os(iOS)
     /// Dictionary of the UIColors to be used in the rotation of the clock display.
-    let colorRotation = [UIColor.white, UIColor.red, UIColor.blue, UIColor.green, UIColor.black]
+    let colorRotation = [UIColor.black, UIColor.white, UIColor.red, UIColor.blue, UIColor.green]
 
     /// Index to use to cycle through colorRotation[] for the updating of the clock textColor. Defaults to 0.
     var colorRotationIndex:Int = 0
@@ -40,7 +40,7 @@ class NatLangViewController: UIViewController {
     var natTime = NaturalLanguageTime.NatTime()
 
     /// DateFormatter to be used to update the time, either to the form of short or long form time.
-    let dForm: DateFormatter = {
+    let formatter: DateFormatter = {
         let temp = DateFormatter()
         temp.dateFormat = "HH:mm:ss"
         return temp
@@ -85,9 +85,10 @@ class NatLangViewController: UIViewController {
     @objc
     func updateTime() {
         #if os(iOS)
+        timeLbl.numberOfLines = (NatLangViewController.isShortLangDisplay ? 1 : 2)
         if (NatLangViewController.isShortLangDisplay)
         {
-            let tempArray = dForm.string(from: Date()).split(separator: ":")
+            let tempArray = formatter.string(from: Date()).split(separator: ":")
             timeLbl.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
             let seconds: CGFloat! = CGFloat((Int(tempArray[2]) ?? 0) + 1)
             UIView.animate(withDuration: 1, animations: {
@@ -98,11 +99,11 @@ class NatLangViewController: UIViewController {
             if (self.timerBGHeightCon.constant != 0) {
                 self.timerBGHeightCon.constant = 0
             }
-            natTime.timeString = dForm.string(from: Date())
+            natTime.timeString = formatter.string(from: Date())
             timeLbl.text = natTime.getNatLangString()
         }
         #elseif os(tvOS)
-        natTime.timeString = dForm.string(from: Date())
+        natTime.timeString = formatter.string(from: Date())
         timeLbl.text = natTime.getNatLangString()
         #endif
     }
@@ -140,7 +141,8 @@ class NatLangViewController: UIViewController {
     @IBAction func onTap(_ sender: UITapGestureRecognizer) {
         impactor.impactOccurred()
         colorRotationIndex += 1
-        if (colorRotationIndex == colorRotation.count) {
+        if (colorRotationIndex == colorRotation.count || (colorRotationIndex == 2 && NatLangViewController.isShortLangDisplay)) {
+            // Prevent rollover or using colors on the blue progress bar
             colorRotationIndex = 0
         }
         updateColor()

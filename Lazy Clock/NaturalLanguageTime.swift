@@ -91,7 +91,6 @@ open class NaturalLanguageTime {
                 returnStatementFormat = NSLocalizedString(oneOClock ? "Five til %@-one" : "Five til %@", comment: "Five til the hour")
             default:
                 returnStatementFormat = NSLocalizedString(oneOClock ? "%@ %@-one" : "%@ %@", comment: "Default")
-                print(returnStatementFormat)
                 let minuteAsString = NSLocalizedString(String(describing: minuteValue), comment: "Minute Value")
                 return String.localizedStringWithFormat(returnStatementFormat, hourAsString, minuteAsString)
             }
