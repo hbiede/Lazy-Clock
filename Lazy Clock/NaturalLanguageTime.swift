@@ -80,6 +80,9 @@ open class NaturalLanguageTime {
                 returnStatementFormat = NSLocalizedString(oneOClock ? "Quarter past %@-one" : "Quarter past %@", comment: "Quarter past the hour")
             case 30:
                 returnStatementFormat = NSLocalizedString(oneOClock ? "Half past %@-one" : "Half past %@", comment: "Half past the hour")
+                if (NSLocale.current.identifier == "en_GB") {
+                    hourAsString = NSLocalizedString(String(describing: hours! + 1), comment: "The current hour, spelled out, but incremented for british time telling")
+                }
             case 45:
                 hourAsString = (hours! == 23 ? midnightAsString : nextHourAsString)
                 returnStatementFormat = NSLocalizedString(oneOClock ? "Quarter til %@-one" : "Quarter til %@", comment: "Quarter til the hour")
