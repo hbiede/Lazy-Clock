@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,14 +13,14 @@
         <!--Nat Lang View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NatLangViewController" customModule="Lazy_Clock" customModuleProvider="target" propertyAccessControl="all" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" propertyAccessControl="all">
+                <viewController id="BYZ-38-t0r" customClass="NatLangViewController" customModule="Lazy_Clock" customModuleProvider="target" propertyAccessControl="none" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Background View" propertyAccessControl="none">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kz-4D-lJs" userLabel="TimerColorBG" propertyAccessControl="all">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kz-4D-lJs" userLabel="TimerColorBG" propertyAccessControl="none">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
-                                <color key="backgroundColor" red="0.087648084977236973" green="0.59239351256449058" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.63921568627450975" green="0.15686274509803921" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="K0Y-L0-FA9"/>
                                 </constraints>
@@ -33,7 +34,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="ftd-pB-ihg" appends="YES" id="CYK-m3-Xxe"/>
                                     <outletCollection property="gestureRecognizers" destination="uBy-uo-50X" appends="YES" id="V2r-OH-pwd"/>
                                 </connections>
                             </label>
@@ -44,21 +44,19 @@
                             <constraint firstItem="9kz-4D-lJs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Hl-uJ-JmW"/>
                             <constraint firstItem="9kz-4D-lJs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CXu-MS-zgr"/>
                             <constraint firstAttribute="trailing" secondItem="9kz-4D-lJs" secondAttribute="trailing" id="KKI-aM-usO"/>
+                            <constraint firstAttribute="trailing" secondItem="9kz-4D-lJs" secondAttribute="trailing" id="VXI-5B-4I1"/>
+                            <constraint firstItem="9kz-4D-lJs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="s3g-9k-nw1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="8bC-Xf-vdC" id="8iz-zc-u1U"/>
                         <outlet property="timeLbl" destination="m1p-fy-tVn" id="ZqQ-e3-B5B"/>
                         <outlet property="timerBGHeightCon" destination="K0Y-L0-FA9" id="Xch-oj-sJN"/>
-                        <outlet property="viewBG" destination="8bC-Xf-vdC" id="uab-2a-FId"/>
+                        <outlet property="timerColorBGView" destination="9kz-4D-lJs" id="MrB-pG-lyG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ftd-pB-ihg">
-                    <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="fmq-Ds-jGC"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="uBy-uo-50X">
                     <connections>
                         <action selector="onSwipeUp:" destination="BYZ-38-t0r" id="4In-M4-CAg"/>
