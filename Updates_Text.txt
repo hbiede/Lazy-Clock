@@ -1,0 +1,4 @@
+Promo Text:
+English: Show the current time in a natural way
+Spanish: Decir la hora de forma natural.
+French: Dire l'heure d'une manière naturelle
