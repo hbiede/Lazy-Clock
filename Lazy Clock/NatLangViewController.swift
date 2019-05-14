@@ -34,13 +34,13 @@ class NatLangViewController: UIViewController {
     								UIColor(red: 0.133, green: 0.322, blue: 0.619, alpha: 1.0)] // blue
 
     /// Index to use to cycle through colorRotation[] for the updating of the clock textColor. Defaults to 0.
-    var colorRotationIndex = 0
+    static var colorRotationIndex = 0
     
     /// Index to use to cycle through timerBGColorRotation[] for the updating of the timer BG color. Defaults to 0.
-    var timerBGColorRotationIndex = 0
+    static var timerBGColorRotationIndex = 0
 
     /// Bool that determines if the clock will be displayed as natural language (False = Natural Time (Default), True = Short Time)
-    var isShortLangDisplay = false
+    static var isShortLangDisplay = false
 
     /// ImpactFeedbackGenerator to be used to create haptic feedback.
     let impactor = UIImpactFeedbackGenerator.init()
@@ -70,20 +70,20 @@ class NatLangViewController: UIViewController {
         mainTapGesture.require(toFail: doubleTapGesture)
         
         // Loads saved data for the clock
-        colorRotationIndex = userSettings.integer(forKey: "LazyClock-ColorIndex")
-        if colorRotationIndex >= colorRotation.count || colorRotationIndex < 0 {
-            colorRotationIndex = 0
+        NatLangViewController.colorRotationIndex = UserDefaults.standard.integer(forKey: "LazyClock-ColorIndex")
+        if NatLangViewController.colorRotationIndex >= colorRotation.count || NatLangViewController.colorRotationIndex < 0 {
+            NatLangViewController.colorRotationIndex = 0
         }
-        timerBGColorRotationIndex = userSettings.integer(forKey: "LazyClock-TimerBGColorIndex")
-        if timerBGColorRotationIndex >= timerBGColorRotation.count || timerBGColorRotationIndex < 0 {
-            timerBGColorRotationIndex = 0
+        NatLangViewController.timerBGColorRotationIndex = UserDefaults.standard.integer(forKey: "LazyClock-TimerBGColorIndex")
+        if NatLangViewController.timerBGColorRotationIndex >= timerBGColorRotation.count || NatLangViewController.timerBGColorRotationIndex < 0 {
+            NatLangViewController.timerBGColorRotationIndex = 0
         }
         updateColorViewBG()
         updateColorForTimerBG()
         
-        isShortLangDisplay = userSettings.bool(forKey: "LazyClock-LazyTimeInactive")
+        NatLangViewController.isShortLangDisplay = UserDefaults.standard.bool(forKey: "LazyClock-LazyTimeInactive")
 
-		if (userSettings.bool(forKey: "LazyClock-HasDonatedInteraction")) { 
+		if (UserDefaults.standard.bool(forKey: "LazyClock-HasDonatedInteraction")) {
 			donateInteraction()
 		}
         #endif
@@ -97,14 +97,6 @@ class NatLangViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTime), userInfo: nil, repeats: true)
 
         os_log("Lazy Clock Launched Successfully")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        // Save the user settings
-        UserDefaults.standard.set(colorRotationIndex, forKey: "LazyClock-ColorIndex")
-        UserDefaults.standard.set(timerBGColorRotationIndex, forKey: "LazyClock-TimerBGColorIndex")
-        UserDefaults.standard.set(isShortLangDisplay, forKey: "LazyClock-LazyTimeInactive")
-        os_log("Lazy Clock Closed Successfully")
     }
 
     func viewSet(label: UILabel!, bg: UIView!) {
@@ -120,12 +112,12 @@ class NatLangViewController: UIViewController {
     @objc
     func updateTime() {
         #if os(iOS)
-        timeLbl.numberOfLines = (isShortLangDisplay ? 1 : 2)
-        if (isShortLangDisplay)
+        timeLbl.numberOfLines = (NatLangViewController.isShortLangDisplay ? 1 : 2)
+        if (NatLangViewController.isShortLangDisplay)
         {
-        	if (colorRotationIndex >= 2) {
+        	if (NatLangViewController.colorRotationIndex >= 2) {
             	// Prevent using colors on the blue progress bar
-            	colorRotationIndex = 0
+            	NatLangViewController.colorRotationIndex = 0
         	}
         	updateColorViewBG()
         	
@@ -169,9 +161,9 @@ class NatLangViewController: UIViewController {
     
     /// Rotates the color of the time as well as the sliding background of the short time display
     @objc func onTap(sender: UITapGestureRecognizer) {
-        var hasUpdatedBG 	   = false
+        var hasUpdatedBG       = false
         var hasUpdatedMainView = false
-        for x in 0..<iterations {
+        for x in 0..<sender.numberOfTouches {
             if (sender.location(ofTouch: x, in: backgroundView).y.isLessThanOrEqualTo(CGFloat(self.timerBGHeightCon.constant)) && !hasUpdatedBG) {
                 onTapTimerBG()
             	hasUpdatedBG = true
@@ -185,17 +177,17 @@ class NatLangViewController: UIViewController {
     /// Rotates colors on single finger touch and saves the color to UserDefaults.
     func onTapMainView() {
         impactor.impactOccurred()
-        colorRotationIndex += 1
-        if (colorRotationIndex == colorRotation.count || (colorRotationIndex == 2 && isShortLangDisplay)) {
+        NatLangViewController.colorRotationIndex += 1
+        if (NatLangViewController.colorRotationIndex == colorRotation.count || (NatLangViewController.colorRotationIndex == 2 && NatLangViewController.isShortLangDisplay)) {
             // Prevent rollover or using colors on the blue progress bar
-            colorRotationIndex = 0
+            NatLangViewController.colorRotationIndex = 0
         }
         updateColorViewBG()
     }
 
     /// Updates the color scheme.
     func updateColorViewBG() {
-        timeLbl.textColor = colorRotation[colorRotationIndex]
+        timeLbl.textColor = colorRotation[NatLangViewController.colorRotationIndex]
         if (timeLbl.textColor == .black) {
             backgroundView.backgroundColor = .white
         } else {
@@ -206,17 +198,17 @@ class NatLangViewController: UIViewController {
     /// Rotates colors on single finger touch and saves the color to UserDefaults.
     func onTapTimerBG() {
         impactor.impactOccurred()
-        timerBGColorRotationIndex += 1
-        if timerBGColorRotationIndex == timerBGColorRotation.count {
+        NatLangViewController.timerBGColorRotationIndex += 1
+        if NatLangViewController.timerBGColorRotationIndex == timerBGColorRotation.count {
             // Prevent rollover
-            timerBGColorRotationIndex = 0
+            NatLangViewController.timerBGColorRotationIndex = 0
         }
         updateColorForTimerBG()
     }
 
     /// Updates the color scheme for the timer BG.
     func updateColorForTimerBG() {
-        timerColorBGView.backgroundColor = timerBGColorRotation[timerBGColorRotationIndex]
+        timerColorBGView.backgroundColor = timerBGColorRotation[NatLangViewController.timerBGColorRotationIndex]
     }
     
     @IBAction func onSwipeUp(_ sender: Any) {
