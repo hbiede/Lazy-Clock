@@ -22,10 +22,16 @@ class NatLangViewController: UIViewController {
     
     #if os(iOS)
     /// Array of the UIColors to be used in the rotation of the clock display.
-    let colorRotation = [UIColor.black, UIColor.white, UIColor(red: 0.639, green: 0.157, blue: 0.133, alpha: 1.0), UIColor(red: 0.24, green: 0.588, blue: 0.318, alpha: 1.0), UIColor(red: 0.133, green: 0.322, blue: 0.619, alpha: 1.0)] // black, white, red, green, blue
+    let colorRotation = [	UIColor.black,
+    						UIColor.white,
+    						UIColor(red: 0.639, green: 0.157, blue: 0.133, alpha: 1.0), // red
+    						UIColor(red: 0.24, green: 0.588, blue: 0.318, alpha: 1.0),  // green
+    						UIColor(red: 0.133, green: 0.322, blue: 0.619, alpha: 1.0)] // blue
     
     /// Array of the UIColors to be used in the rotation of the timer BG color.
-    let timerBGColorRotation = [UIColor(red: 0.639, green: 0.157, blue: 0.133, alpha: 1.0), UIColor(red: 0.24, green: 0.588, blue: 0.318, alpha: 1.0), UIColor(red: 0.133, green: 0.322, blue: 0.619, alpha: 1.0)] // red, green, blue
+    let timerBGColorRotation = [	UIColor(red: 0.639, green: 0.157, blue: 0.133, alpha: 1.0), // red
+    								UIColor(red: 0.24, green: 0.588, blue: 0.318, alpha: 1.0),  // green
+    								UIColor(red: 0.133, green: 0.322, blue: 0.619, alpha: 1.0)] // blue
 
     /// Index to use to cycle through colorRotation[] for the updating of the clock textColor. Defaults to 0.
     var colorRotationIndex = 0
@@ -34,13 +40,10 @@ class NatLangViewController: UIViewController {
     var timerBGColorRotationIndex = 0
 
     /// Bool that determines if the clock will be displayed as natural language (False = Natural Time (Default), True = Short Time)
-    static var isShortLangDisplay = false
+    var isShortLangDisplay = false
 
     /// ImpactFeedbackGenerator to be used to create haptic feedback.
     let impactor = UIImpactFeedbackGenerator.init()
-
-    /// UserDefaults used to store settings for the app.
-    let userSettings = UserDefaults.standard
     #endif
 
     /// Natural Laguage Formatter
@@ -52,6 +55,7 @@ class NatLangViewController: UIViewController {
         temp.dateFormat = "HH:mm:ss"
         return temp
     }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,9 +81,11 @@ class NatLangViewController: UIViewController {
         updateColorViewBG()
         updateColorForTimerBG()
         
-        NatLangViewController.isShortLangDisplay = userSettings.bool(forKey: "LazyClock-LazyTimeInactive")
+        isShortLangDisplay = userSettings.bool(forKey: "LazyClock-LazyTimeInactive")
 
-        donateInteraction()
+		if (userSettings.bool(forKey: "LazyClock-HasDonatedInteraction")) { 
+			donateInteraction()
+		}
         #endif
 
         // Sets defaults for the timeLbl
@@ -95,9 +101,9 @@ class NatLangViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         // Save the user settings
-        userSettings.set(colorRotationIndex, forKey: "LazyClock-ColorIndex")
-        userSettings.set(timerBGColorRotationIndex, forKey: "LazyClock-TimerBGColorIndex")
-        userSettings.set(NatLangViewController.isShortLangDisplay, forKey: "LazyClock-LazyTimeInactive")
+        UserDefaults.standard.set(colorRotationIndex, forKey: "LazyClock-ColorIndex")
+        UserDefaults.standard.set(timerBGColorRotationIndex, forKey: "LazyClock-TimerBGColorIndex")
+        UserDefaults.standard.set(isShortLangDisplay, forKey: "LazyClock-LazyTimeInactive")
         os_log("Lazy Clock Closed Successfully")
     }
 
@@ -114,16 +120,22 @@ class NatLangViewController: UIViewController {
     @objc
     func updateTime() {
         #if os(iOS)
-        timeLbl.numberOfLines = (NatLangViewController.isShortLangDisplay ? 1 : 2)
-        if (NatLangViewController.isShortLangDisplay)
+        timeLbl.numberOfLines = (isShortLangDisplay ? 1 : 2)
+        if (isShortLangDisplay)
         {
+        	if (colorRotationIndex >= 2) {
+            	// Prevent using colors on the blue progress bar
+            	colorRotationIndex = 0
+        	}
+        	updateColorViewBG()
+        	
             let tempArray = formatter.string(from: Date()).split(separator: ":")
             timeLbl.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
             let seconds: CGFloat! = CGFloat((Int(tempArray[2]) ?? 0) + 1)
             UIView.animate(withDuration: 1, animations: {
                 self.timerBGHeightCon.constant = seconds / 60.0 * self.backgroundView.frame.height
                 self.view.layoutIfNeeded()
-                })
+            })
         } else {
             if (self.timerBGHeightCon.constant != 0) {
                 self.timerBGHeightCon.constant = 0
@@ -140,9 +152,7 @@ class NatLangViewController: UIViewController {
     #if os(iOS)
     private func donateInteraction() {
         let intent = LazyClockSpecifiedIntent()
-
         intent.suggestedInvocationPhrase = "Naturalize Clipboard"
-
         let interaction = INInteraction(intent: intent, response: nil)
 
         interaction.donate { (error) in
@@ -154,16 +164,20 @@ class NatLangViewController: UIViewController {
                 os_log("Successfully donated clipboard interaction")
             }
         }
+        UserDefaults.standard.set(true, forKey: "LazyClock-HasDonatedInteraction")
     }
     
+    /// Rotates the color of the time as well as the sliding background of the short time display
     @objc func onTap(sender: UITapGestureRecognizer) {
-        print(sender)
-        print(sender.numberOfTouches)
-        for x in 0..<sender.numberOfTouches {
-            if (sender.location(ofTouch: x, in: backgroundView).y.isLessThanOrEqualTo(CGFloat(self.timerBGHeightCon.constant))) {
+        var hasUpdatedBG 	   = false
+        var hasUpdatedMainView = false
+        for x in 0..<iterations {
+            if (sender.location(ofTouch: x, in: backgroundView).y.isLessThanOrEqualTo(CGFloat(self.timerBGHeightCon.constant)) && !hasUpdatedBG) {
                 onTapTimerBG()
-            } else {
+            	hasUpdatedBG = true
+            } else if (!hasUpdatedMainView) {
                 onTapMainView()
+                hasUpdatedMainView = true
             }
         }
     }
@@ -172,12 +186,11 @@ class NatLangViewController: UIViewController {
     func onTapMainView() {
         impactor.impactOccurred()
         colorRotationIndex += 1
-        if (colorRotationIndex == colorRotation.count || (colorRotationIndex == 2 && NatLangViewController.isShortLangDisplay)) {
+        if (colorRotationIndex == colorRotation.count || (colorRotationIndex == 2 && isShortLangDisplay)) {
             // Prevent rollover or using colors on the blue progress bar
             colorRotationIndex = 0
         }
         updateColorViewBG()
-        userSettings.set(colorRotationIndex, forKey: "LazyClock-ColorIndex")
     }
 
     /// Updates the color scheme.
@@ -199,7 +212,6 @@ class NatLangViewController: UIViewController {
             timerBGColorRotationIndex = 0
         }
         updateColorForTimerBG()
-        userSettings.set(timerBGColorRotationIndex, forKey: "LazyClock-TimerBGColorIndex")
     }
 
     /// Updates the color scheme for the timer BG.
