@@ -1,0 +1,24 @@
+"3FvdNq" = "Erreur. $ {timeInput} n'est pas un code temporel valide. La saisie doit être au format \"HH:mm\" au format 24 heures.";
+
+"87RuoU" = "Conversion de l'heure en langage naturel pour l'heure actuelle. Copie le résultat dans le Presse-papiers.";
+
+"9YEXGa" = "Conversion de l'heure en langage naturel dans le presse-papier pour une heure spécifiée. Copie le résultat dans le presse-papier. L'heure doit être au format \"HH:mm\" dans 24 heures.";
+
+"A66vu3" = "Heure Spécifique";
+
+"AIKV6M" = "Conversion de l'heure en langage naturel pour l'heure actuelle. Copie le résultat dans le Presse-papiers.";
+
+"AtYkCo" = "Lazy Clock";
+
+"BaXwL4" = "${timeResponse}";
+
+"JQRER7" = "Conversion du temps en langage naturel dans le presse-papier pour une heure spécifiée. Le résultat est copié dans le presse-papier. L'heure doit être au format \"HH:mm\" dans 24 heures.";
+
+"RPMw7i" = "Lazy Clock du presse-papiers";
+
+"jYKF8r" = "Erreur. Le temps n'existe pas.";
+
+"mqU4zW" = "Heure Actuelle";
+
+"zzKCgD" = "${timeResponse}";
+

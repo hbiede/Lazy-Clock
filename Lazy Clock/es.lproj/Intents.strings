@@ -1,0 +1,24 @@
+"3FvdNq" = "Error. $ {timeInput} no es un código de tiempo válido. La entrada debe tener la forma \"HH:mm\" en formato de 24 horas.";
+
+"87RuoU" = "Conversión de tiempo en lenguaje natural para la hora actual. Copia el resultado en el portapapeles.";
+
+"9YEXGa" = "Conversión de tiempo en lenguaje natural durante un tiempo especificado desde el portapapeles. Copia el resultado en el portapapeles. El tiempo debe estar en formato \"HH:mm\" en tiempo de 24 horas.";
+
+"A66vu3" = "Tiempo Específico";
+
+"AIKV6M" = "Conversión de tiempo en lenguaje natural para la hora actual. Copia el resultado en el portapapeles.";
+
+"AtYkCo" = "Lazy Clock";
+
+"BaXwL4" = "${timeResponse}";
+
+"JQRER7" = "Conversión de tiempo en lenguaje natural durante un tiempo especificado desde el portapapeles. Copia el resultado en el portapapeles. El tiempo debe estar en formato \"HH:mm\" en tiempo de 24 horas.";
+
+"RPMw7i" = "Lazy Clock desde el Portapapeles";
+
+"jYKF8r" = "Error. El tiempo no existe.";
+
+"mqU4zW" = "Hora Actual";
+
+"zzKCgD" = "${timeResponse}";
+

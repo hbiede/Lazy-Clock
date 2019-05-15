@@ -1,0 +1,24 @@
+"3FvdNq" = "Error. ${timeInput} is not a valid time code. Input must be of the form \"HH:mm\" in 24 hour format.";
+
+"87RuoU" = "Natural Language Time conversion for the current time. Copies the result to the clipboard.";
+
+"9YEXGa" = "Natural Language Time conversion for a specified time from the clipboard. Copies the result to the clipboard. Time must be in format \"HH:mm\" in 24 hour time.";
+
+"A66vu3" = "Specific Time";
+
+"AIKV6M" = "Natural Language Time conversion for the current time. Copies the result to the clipboard.";
+
+"AtYkCo" = "Lazy Clock";
+
+"BaXwL4" = "${timeResponse}";
+
+"JQRER7" = "Natural Language Time conversion for a specified time from the clipboard. Copies the result to the clipboard. Time must be in format \"HH:mm\" in 24 hour time.";
+
+"RPMw7i" = "Lazy Clock from Clipboard";
+
+"jYKF8r" = "Error. Time Doesn't Exist.";
+
+"mqU4zW" = "Current Time";
+
+"zzKCgD" = "${timeResponse}";
+

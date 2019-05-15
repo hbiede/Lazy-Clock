@@ -7,18 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D48051D224B225600574917 /* WatchInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3BC025C21C4369100845642 /* WatchInterface.storyboard */; };
-		3D48052A224B28DA00574917 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1F91C221A38CC00C0FE21 /* ExtensionDelegate.swift */; };
-		3D48052B224B291400574917 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1F91A221A38CC00C0FE21 /* InterfaceController.swift */; };
-		3DB1F916221A38CC00C0FE21 /* watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3DB1F915221A38CB00C0FE21 /* watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3DB1F923221A38CC00C0FE21 /* watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3DB1F909221A38CB00C0FE21 /* watchOS.app */; };
-		3DB1F92B221A3A1600C0FE21 /* NaturalLanguageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */; };
-		3DB1F92F221A3C4200C0FE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB1F92E221A3C4200C0FE21 /* Assets.xcassets */; };
+		3D7F7CC7228BBCAF00239A71 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F7CCA228BBCAF00239A71 /* Intents.intentdefinition */; };
+		3D7F7CC8228BBCAF00239A71 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F7CCA228BBCAF00239A71 /* Intents.intentdefinition */; };
 		3DF128DE221A165200F32DF2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DF128E4221A165200F32DF2 /* Localizable.strings */; };
 		3DF128DF221A165200F32DF2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DF128E4221A165200F32DF2 /* Localizable.strings */; };
 		3DF128E0221A165200F32DF2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DF128E4221A165200F32DF2 /* Localizable.strings */; };
-		3DFBF6A0221A597100F5AA22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DF128E4221A165200F32DF2 /* Localizable.strings */; };
-		3DFBF6A1221A597100F5AA22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DF128E4221A165200F32DF2 /* Localizable.strings */; };
 		C309EA7C215147140074AEAD /* LazyClockSpecifiedIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C309EA7B215147140074AEAD /* LazyClockSpecifiedIntentHandler.swift */; };
 		C310D0C52112BA54002302E8 /* NaturalLanguageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */; };
 		C310D0FC2112C47A002302E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35A85CC211225460053AB48 /* Assets.xcassets */; };
@@ -32,8 +25,6 @@
 		C332BA982134F83900276726 /* LazyIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C332BA812134F83900276726 /* LazyIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C332BAA22134F8AD00276726 /* NaturalLanguageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */; };
 		C332BAA72134F9AD00276726 /* LazyClockIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C332BAA62134F9AD00276726 /* LazyClockIntentHandler.swift */; };
-		C332BAAA2134FFF800276726 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = C332BAA92134FFF800276726 /* Intents.intentdefinition */; };
-		C332BAAB213500C900276726 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = C332BAA92134FFF800276726 /* Intents.intentdefinition */; };
 		C344ADEC2134B3C000638455 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C344ADEB2134B3C000638455 /* SettingsViewController.swift */; };
 		C35A85D3211225470053AB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CF211225460053AB48 /* AppDelegate.swift */; };
 		C35A85D82112255F0053AB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35A85D42112255F0053AB48 /* Main.storyboard */; };
@@ -43,20 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3DB1F917221A38CC00C0FE21 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C35A85AB21121A0B0053AB48 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3DB1F914221A38CB00C0FE21;
-			remoteInfo = "watchOS Extension";
-		};
-		3DB1F921221A38CC00C0FE21 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C35A85AB21121A0B0053AB48 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3DB1F908221A38CB00C0FE21;
-			remoteInfo = watchOS;
-		};
 		C332BA382134F1A000276726 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C35A85AB21121A0B0053AB48 /* Project object */;
@@ -81,17 +58,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3DB1F927221A38CC00C0FE21 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				3DB1F916221A38CC00C0FE21 /* watchOS Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C310D0C02112B7CA002302E8 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,7 +76,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				3DB1F923221A38CC00C0FE21 /* watchOS.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,8 +85,11 @@
 /* Begin PBXFileReference section */
 		3D480527224B228C00574917 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/WatchInterface.strings; sourceTree = "<group>"; };
 		3D480529224B229000574917 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/WatchInterface.strings; sourceTree = "<group>"; };
-		3DB1F909221A38CB00C0FE21 /* watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DB1F915221A38CB00C0FE21 /* watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D7F7CC9228BBCAF00239A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Intents.intentdefinition; sourceTree = "<group>"; };
+		3D7F7CCC228BBCB100239A71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Intents.strings; sourceTree = "<group>"; };
+		3D7F7CCE228BBCB200239A71 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Intents.strings; sourceTree = "<group>"; };
+		3D7F7CD0228BBCB300239A71 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Intents.strings; sourceTree = "<group>"; };
+		3D7F7CD2228BBCB400239A71 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Intents.strings"; sourceTree = "<group>"; };
 		3DB1F91A221A38CC00C0FE21 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		3DB1F91C221A38CC00C0FE21 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		3DB1F920221A38CC00C0FE21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,7 +118,6 @@
 		C332BA832134F83900276726 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		C332BA852134F83900276726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C332BAA62134F9AD00276726 /* LazyClockIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyClockIntentHandler.swift; sourceTree = "<group>"; };
-		C332BAA92134FFF800276726 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		C344ADEB2134B3C000638455 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C344ADED2134BACD00638455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C35A85B321121A0B0053AB48 /* Lazy Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lazy Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,13 +134,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3DB1F912221A38CB00C0FE21 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C332BA2B2134F1A000276726 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,8 +226,6 @@
 				C332BA2E2134F1A000276726 /* TodayView.appex */,
 				C332BA812134F83900276726 /* LazyIntent.appex */,
 				C3B218C721C44C1800B3AFAB /* Lazy ClockTests.xctest */,
-				3DB1F909221A38CB00C0FE21 /* watchOS.app */,
-				3DB1F915221A38CB00C0FE21 /* watchOS Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -285,7 +243,7 @@
 				C35A85D42112255F0053AB48 /* Main.storyboard */,
 				C31F82E5213C72AD00294F4F /* LaunchScreen.storyboard */,
 				C35A85CD211225460053AB48 /* Info.plist */,
-				C332BAA92134FFF800276726 /* Intents.intentdefinition */,
+				3D7F7CCA228BBCAF00239A71 /* Intents.intentdefinition */,
 			);
 			path = "Lazy Clock";
 			sourceTree = "<group>";
@@ -312,40 +270,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3DB1F908221A38CB00C0FE21 /* watchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3DB1F928221A38CC00C0FE21 /* Build configuration list for PBXNativeTarget "watchOS" */;
-			buildPhases = (
-				3DB1F907221A38CB00C0FE21 /* Resources */,
-				3DB1F927221A38CC00C0FE21 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3DB1F918221A38CC00C0FE21 /* PBXTargetDependency */,
-			);
-			name = watchOS;
-			productName = watchOS;
-			productReference = 3DB1F909221A38CB00C0FE21 /* watchOS.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		3DB1F914221A38CB00C0FE21 /* watchOS Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3DB1F924221A38CC00C0FE21 /* Build configuration list for PBXNativeTarget "watchOS Extension" */;
-			buildPhases = (
-				3DB1F911221A38CB00C0FE21 /* Sources */,
-				3DB1F912221A38CB00C0FE21 /* Frameworks */,
-				3DB1F913221A38CB00C0FE21 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "watchOS Extension";
-			productName = "watchOS Extension";
-			productReference = 3DB1F915221A38CB00C0FE21 /* watchOS Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		C332BA2D2134F1A000276726 /* TodayView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C332BA3B2134F1A000276726 /* Build configuration list for PBXNativeTarget "TodayView" */;
@@ -395,7 +319,6 @@
 			dependencies = (
 				C332BA392134F1A000276726 /* PBXTargetDependency */,
 				C332BA972134F83900276726 /* PBXTargetDependency */,
-				3DB1F922221A38CC00C0FE21 /* PBXTargetDependency */,
 			);
 			name = "Lazy Clock";
 			productName = "Lazy Time";
@@ -430,13 +353,6 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Hundter Biede";
 				TargetAttributes = {
-					3DB1F908221A38CB00C0FE21 = {
-						CreatedOnToolsVersion = 10.1;
-					};
-					3DB1F914221A38CB00C0FE21 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1020;
-					};
 					C332BA2D2134F1A000276726 = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1020;
@@ -483,32 +399,12 @@
 				C35A85B221121A0B0053AB48 /* Lazy Clock */,
 				C332BA2D2134F1A000276726 /* TodayView */,
 				C332BA802134F83900276726 /* LazyIntent */,
-				3DB1F908221A38CB00C0FE21 /* watchOS */,
-				3DB1F914221A38CB00C0FE21 /* watchOS Extension */,
 				C3B218C621C44C1800B3AFAB /* Lazy ClockTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3DB1F907221A38CB00C0FE21 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3DB1F92F221A3C4200C0FE21 /* Assets.xcassets in Resources */,
-				3DFBF6A0221A597100F5AA22 /* Localizable.strings in Resources */,
-				3D48051D224B225600574917 /* WatchInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3DB1F913221A38CB00C0FE21 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3DFBF6A1221A597100F5AA22 /* Localizable.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C332BA2C2134F1A000276726 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -547,16 +443,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3DB1F911221A38CB00C0FE21 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D48052B224B291400574917 /* InterfaceController.swift in Sources */,
-				3D48052A224B28DA00574917 /* ExtensionDelegate.swift in Sources */,
-				3DB1F92B221A3A1600C0FE21 /* NaturalLanguageTime.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C332BA2A2134F1A000276726 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -573,7 +459,7 @@
 				C309EA7C215147140074AEAD /* LazyClockSpecifiedIntentHandler.swift in Sources */,
 				C332BAA22134F8AD00276726 /* NaturalLanguageTime.swift in Sources */,
 				C332BA842134F83900276726 /* IntentHandler.swift in Sources */,
-				C332BAAB213500C900276726 /* Intents.intentdefinition in Sources */,
+				3D7F7CC8228BBCAF00239A71 /* Intents.intentdefinition in Sources */,
 				C332BAA72134F9AD00276726 /* LazyClockIntentHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,7 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C332BAAA2134FFF800276726 /* Intents.intentdefinition in Sources */,
+				3D7F7CC7228BBCAF00239A71 /* Intents.intentdefinition in Sources */,
 				C310D0C52112BA54002302E8 /* NaturalLanguageTime.swift in Sources */,
 				C344ADEC2134B3C000638455 /* SettingsViewController.swift in Sources */,
 				C3E7A264213378F600724CCB /* NatLangViewController.swift in Sources */,
@@ -602,16 +488,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3DB1F918221A38CC00C0FE21 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3DB1F914221A38CB00C0FE21 /* watchOS Extension */;
-			targetProxy = 3DB1F917221A38CC00C0FE21 /* PBXContainerItemProxy */;
-		};
-		3DB1F922221A38CC00C0FE21 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3DB1F908221A38CB00C0FE21 /* watchOS */;
-			targetProxy = 3DB1F921221A38CC00C0FE21 /* PBXContainerItemProxy */;
-		};
 		C332BA392134F1A000276726 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C332BA2D2134F1A000276726 /* TodayView */;
@@ -630,6 +506,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3D7F7CCA228BBCAF00239A71 /* Intents.intentdefinition */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D7F7CC9228BBCAF00239A71 /* Base */,
+				3D7F7CCC228BBCB100239A71 /* en */,
+				3D7F7CCE228BBCB200239A71 /* es */,
+				3D7F7CD0228BBCB300239A71 /* fr */,
+				3D7F7CD2228BBCB400239A71 /* en-GB */,
+			);
+			name = Intents.intentdefinition;
+			sourceTree = "<group>";
+		};
 		3DF128E4221A165200F32DF2 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -678,88 +566,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3DB1F925221A38CC00C0FE21 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69RV8YV62P;
-				INFOPLIST_FILE = "watchOS Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.iOS.watchkitapp.ext";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
-			};
-			name = Debug;
-		};
-		3DB1F926221A38CC00C0FE21 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69RV8YV62P;
-				INFOPLIST_FILE = "watchOS Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.iOS.watchkitapp.ext";
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
-			};
-			name = Release;
-		};
-		3DB1F929221A38CC00C0FE21 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69RV8YV62P;
-				IBSC_MODULE = watchOS_Extension;
-				INFOPLIST_FILE = watchOS/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.iOS.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
-			};
-			name = Debug;
-		};
-		3DB1F92A221A38CC00C0FE21 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69RV8YV62P;
-				IBSC_MODULE = watchOS_Extension;
-				INFOPLIST_FILE = watchOS/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hbiede.Lazy-Clock.iOS.watchkitapp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
-			};
-			name = Release;
-		};
 		C332BA3C2134F1A000276726 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -889,7 +695,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LC_Build = 23;
+				LC_Build = 25;
 				LC_Version = 1.3.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -947,7 +753,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				LC_Build = 23;
+				LC_Build = 25;
 				LC_Version = 1.3.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1055,24 +861,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3DB1F924221A38CC00C0FE21 /* Build configuration list for PBXNativeTarget "watchOS Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3DB1F925221A38CC00C0FE21 /* Debug */,
-				3DB1F926221A38CC00C0FE21 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3DB1F928221A38CC00C0FE21 /* Build configuration list for PBXNativeTarget "watchOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3DB1F929221A38CC00C0FE21 /* Debug */,
-				3DB1F92A221A38CC00C0FE21 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C332BA3B2134F1A000276726 /* Build configuration list for PBXNativeTarget "TodayView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
