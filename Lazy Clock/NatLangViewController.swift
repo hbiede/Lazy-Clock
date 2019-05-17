@@ -98,13 +98,42 @@ class NatLangViewController: UIViewController {
 
         os_log("Lazy Clock Launched Successfully")
     }
-
-    func viewSet(label: UILabel!, bg: UIView!) {
-        timeLbl = label
-        backgroundView = bg
+    
+    /// Prevent using colors on the blue progress bar or showing the bar when not intended after changing the setting of isShortLangDisplay
+    override func viewWillAppear(_ animated: Bool) {
+        if NatLangViewController.isShortLangDisplay {
+            if (NatLangViewController.colorRotationIndex >= 2) {
+                NatLangViewController.colorRotationIndex = 0
+            }
+            updateColorViewBG()
+        } else {
+            self.timerBGHeightCon.constant = 0
+        }
+        
     }
-
+    
+    /// normal setup of a new app view controller
     override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    /// use the accessibilityScroll action to perform the equivalent of tapping the primary background
+    override func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool {
+        // increment in the direction of the scroll
+        switch direction {
+            case .down, .left, .previous:
+                NatLangViewController.colorRotationIndex -= 1
+            default:
+                NatLangViewController.colorRotationIndex += 1
+        }
+        
+        // Prevent rollover or using colors on the blue progress bar
+        if (NatLangViewController.colorRotationIndex == colorRotation.count || (NatLangViewController.colorRotationIndex == 2 && NatLangViewController.isShortLangDisplay)) {
+            NatLangViewController.colorRotationIndex = 0
+        } else if (NatLangViewController.colorRotationIndex == -1) {
+            NatLangViewController.colorRotationIndex = (NatLangViewController.isShortLangDisplay ? 1 : colorRotation.count - 1)
+        }
+        updateColorViewBG()
         return true
     }
 
@@ -113,25 +142,16 @@ class NatLangViewController: UIViewController {
     func updateTime() {
         #if os(iOS)
         timeLbl.numberOfLines = (NatLangViewController.isShortLangDisplay ? 1 : 2)
-        if (NatLangViewController.isShortLangDisplay)
-        {
-        	if (NatLangViewController.colorRotationIndex >= 2) {
-            	// Prevent using colors on the blue progress bar
-            	NatLangViewController.colorRotationIndex = 0
-        	}
-        	updateColorViewBG()
-        	
-            let tempArray = formatter.string(from: Date()).split(separator: ":")
+        if (NatLangViewController.isShortLangDisplay) {
             timeLbl.text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .short)
-            let seconds: CGFloat! = CGFloat((Int(tempArray[2]) ?? 0) + 1)
+            
+            let tempArray = formatter.string(from: Date()).trimmingCharacters(in: .whitespacesAndNewlines).split(separator: ":")
             UIView.animate(withDuration: 1, animations: {
-                self.timerBGHeightCon.constant = seconds / 60.0 * self.backgroundView.frame.height
+                // the below CGFloat represents the current seconds, thus the overall math equaltion results in a the height of timerBG being set to a proportion of the full height of the screen
+                self.timerBGHeightCon.constant = CGFloat((Int(tempArray[2]) ?? 0) + 1) / 60.0 * self.backgroundView.frame.height
                 self.view.layoutIfNeeded()
             })
         } else {
-            if (self.timerBGHeightCon.constant != 0) {
-                self.timerBGHeightCon.constant = 0
-            }
             natTime.timeString = formatter.string(from: Date())
             timeLbl.text = natTime.getNatLangString()
         }

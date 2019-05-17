@@ -22,6 +22,11 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         settingsSwitch.isOn = !UserDefaults.standard.bool(forKey: "LazyClock-LazyTimeInactive")
     }
+    
+    override func accessibilityPerformEscape() -> Bool {
+        self.dismiss(animated: true, completion: nil)
+        return true
+    }
 
     @IBAction func onChanged(_ sender: UISwitch) {
         UserDefaults.standard.set(!settingsSwitch.isOn, forKey: "LazyClock-LazyTimeInactive")
