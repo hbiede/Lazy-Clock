@@ -5,4 +5,4 @@
 
 [App Store Link](https://itunes.apple.com/us/app/lazy-clock-natural-language/id1421644784)
 
-An iOS/tvOS app created to give user a non-specific view of the current time (ie "Half Past Five" rather than "5:28").
+An iOS app created to give user a non-specific view of the current time (ie "Half Past Five" rather than "5:28").
