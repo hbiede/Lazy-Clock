@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="dark"/>
+    <accessibilityOverrides isEnabled="YES" dynamicTypePreference="2"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,8 +26,8 @@
                             </view>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lbl" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1p-fy-tVn">
                                 <rect key="frame" x="0.0" y="44" width="414" height="776"/>
-                                <gestureRecognizers/>
                                 <viewLayoutGuide key="safeArea" id="KPI-Qf-597"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="1000"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +48,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="darkTextColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="BEN-Rt-ini" firstAttribute="top" secondItem="m1p-fy-tVn" secondAttribute="bottom" constant="8" id="2Ih-KM-2nH"/>
@@ -66,7 +66,6 @@
                             <constraint firstItem="9kz-4D-lJs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="s3g-9k-nw1"/>
                             <constraint firstItem="m1p-fy-tVn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yex-rK-5kS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="8bC-Xf-vdC" id="8iz-zc-u1U"/>
@@ -92,25 +91,24 @@
             <objects>
                 <viewController id="5ms-S4-WX6" customClass="SettingsViewController" customModule="Lazy_Clock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O9H-lq-r8E" userLabel="SettingsViewBG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lazy Clock gives you a view of the time that sounds more natural than a standard 5:28, instead giving you &quot;Half Past Five&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-sg-2Vf">
-                                <rect key="frame" x="20" y="44" width="374" height="258"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lazy Clock gives you a view of the time that sounds more natural than a standard 5:28, instead giving you &quot;Half Past Five&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-sg-2Vf">
+                                <rect key="frame" x="20" y="20" width="374" height="705"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="258" id="PDx-tZ-azQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <attributedString key="userComments">
                                     <fragment content="SettingsInstructions"/>
                                 </attributedString>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4vc-hd-aee" userLabel="SwitchView">
-                                <rect key="frame" x="20" y="746" width="374" height="108"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vc-hd-aee" userLabel="SwitchView">
+                                <rect key="frame" x="20" y="726" width="374" height="108"/>
                                 <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enc-RB-dr0">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enc-RB-dr0">
                                         <rect key="frame" x="302" y="38.666666666666629" width="51" height="31"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES" allowsDirectInteraction="YES"/>
@@ -119,33 +117,34 @@
                                             <constraint firstAttribute="width" constant="49" id="Ydi-Vv-Eac"/>
                                             <constraint firstAttribute="height" constant="31" id="qlW-Yq-Vsz"/>
                                         </constraints>
+                                        <color key="onTintColor" systemColor="systemRedColor"/>
                                         <connections>
                                             <action selector="onChanged:" destination="5ms-S4-WX6" eventType="valueChanged" id="ZdP-mO-wES"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lazy Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQ2-hj-B0V">
-                                        <rect key="frame" x="33" y="43.666666666666629" width="81" height="21"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lazy Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQ2-hj-B0V">
+                                        <rect key="frame" x="33" y="25" width="82" height="58"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                        </accessibility>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="zQ2-hj-B0V" secondAttribute="height" multiplier="27:7" id="ldj-yC-dRw"/>
+                                            <constraint firstAttribute="width" secondItem="zQ2-hj-B0V" secondAttribute="height" multiplier="123:29" id="OL9-wM-sth"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="PQa-aj-2ap"/>
-                                    <constraint firstItem="zQ2-hj-B0V" firstAttribute="leading" secondItem="4vc-hd-aee" secondAttribute="leading" constant="33.000000000000114" id="Rc9-5A-77x"/>
-                                    <constraint firstAttribute="trailing" secondItem="enc-RB-dr0" secondAttribute="trailing" constant="23" id="VXg-ow-Ttn"/>
-                                    <constraint firstItem="enc-RB-dr0" firstAttribute="centerY" secondItem="4vc-hd-aee" secondAttribute="centerY" id="hn4-mf-GRZ"/>
-                                    <constraint firstAttribute="height" constant="108" id="irg-s4-7Nh"/>
-                                    <constraint firstItem="zQ2-hj-B0V" firstAttribute="centerY" secondItem="4vc-hd-aee" secondAttribute="centerY" id="nFl-NX-cPG"/>
-                                    <constraint firstItem="enc-RB-dr0" firstAttribute="leading" secondItem="zQ2-hj-B0V" secondAttribute="trailing" constant="187.99999999999994" id="tFN-4H-xdu"/>
+                                    <constraint firstItem="zQ2-hj-B0V" firstAttribute="leading" secondItem="4vc-hd-aee" secondAttribute="leading" constant="33" id="MMB-cK-JXt"/>
+                                    <constraint firstItem="zQ2-hj-B0V" firstAttribute="centerY" secondItem="4vc-hd-aee" secondAttribute="centerY" id="sbN-fA-kmo"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HRq-my-Q36"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="PTP-sg-2Vf" firstAttribute="leading" secondItem="HRq-my-Q36" secondAttribute="leading" constant="20" id="Dem-m0-iRE"/>
@@ -157,13 +156,14 @@
                             <constraint firstItem="4vc-hd-aee" firstAttribute="centerX" secondItem="O9H-lq-r8E" secondAttribute="centerX" id="wbe-pN-tlo"/>
                             <constraint firstItem="PTP-sg-2Vf" firstAttribute="leading" secondItem="HRq-my-Q36" secondAttribute="leading" constant="20" id="wrS-0a-GtK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="HRq-my-Q36"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="iJU-Or-R5q" appends="YES" id="yoe-B2-k2s"/>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="mainText" destination="PTP-sg-2Vf" id="vXl-GC-AwH"/>
                         <outlet property="settingsSwitch" destination="enc-RB-dr0" id="Ia8-95-7qu"/>
+                        <outlet property="settingsSwitchLabel" destination="zQ2-hj-B0V" id="gZu-Ye-QqC"/>
                         <outlet property="settingsViewBG" destination="O9H-lq-r8E" id="afU-iU-vwe"/>
                         <outlet property="switchContainer" destination="4vc-hd-aee" id="W41-WF-16y"/>
                     </connections>
@@ -175,10 +175,21 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="836.25" y="127.5"/>
+            <point key="canvasLocation" x="836.23188405797111" y="127.23214285714285"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="FHc-kg-uA7"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

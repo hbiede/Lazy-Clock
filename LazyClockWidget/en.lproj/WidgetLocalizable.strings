@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Lazy Clock
+
+  Created by Hundter Biede on 11/5/22.
+  Copyright © 2022 Hundter Biede. All rights reserved.
+*/
+
+/* Name of the widget */
+"widget-desc" = "Lazy Clock";
+
+/* Description for the widget */
+"widget-name" = "Time in natural language";

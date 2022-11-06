@@ -1,125 +1,318 @@
 {
   "images" : [
     {
-      "size" : "20x20",
-      "idiom" : "iphone",
       "filename" : "Icon-App-20x20@2x.png",
-      "scale" : "2x"
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "2x",
+      "size" : "20x20"
     },
     {
-      "size" : "20x20",
-      "idiom" : "iphone",
       "filename" : "Icon-App-20x20@3x.png",
-      "scale" : "3x"
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "3x",
+      "size" : "20x20"
     },
     {
-      "size" : "29x29",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-29x29@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "iphone",
       "filename" : "Icon-App-29x29@2x.png",
-      "scale" : "2x"
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "2x",
+      "size" : "29x29"
     },
     {
-      "size" : "29x29",
-      "idiom" : "iphone",
       "filename" : "Icon-App-29x29@3x.png",
-      "scale" : "3x"
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "3x",
+      "size" : "29x29"
     },
     {
-      "size" : "40x40",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-40x40@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-40x40@3x.png",
-      "scale" : "3x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-60x60@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "iphone",
-      "filename" : "Icon-App-60x60@3x.png",
-      "scale" : "3x"
-    },
-    {
-      "size" : "20x20",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-20x20@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "20x20",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-20x20@2x-1.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-29x29@1x-1.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-29x29@2x-1.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-40x40@1x.png",
-      "scale" : "1x"
-    },
-    {
-      "size" : "40x40",
-      "idiom" : "ipad",
-      "filename" : "Icon-App-40x40@2x-1.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "76x76",
-      "idiom" : "ipad",
       "filename" : "Icon-App-76x76@1x.png",
-      "scale" : "1x"
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "2x",
+      "size" : "38x38"
     },
     {
-      "size" : "76x76",
-      "idiom" : "ipad",
+      "filename" : "Icon-AppleWatch-38x38@3x.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "3x",
+      "size" : "38x38"
+    },
+    {
+      "filename" : "Icon-App-40x40@2x.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "2x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "Icon-App-40x40@3x.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "3x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "Icon-App-40x40@3x 1.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "2x",
+      "size" : "60x60"
+    },
+    {
+      "filename" : "Icon-App-60x60@3x.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "3x",
+      "size" : "60x60"
+    },
+    {
+      "filename" : "Icon-AppleWatch-128x128 1.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "2x",
+      "size" : "64x64"
+    },
+    {
+      "filename" : "Icon-AppleWatch-64x64@3x.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "3x",
+      "size" : "64x64"
+    },
+    {
+      "filename" : "Icon-AppleWatch-68x68@2x.png",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "2x",
+      "size" : "68x68"
+    },
+    {
       "filename" : "Icon-App-76x76@2x.png",
-      "scale" : "2x"
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "2x",
+      "size" : "76x76"
     },
     {
-      "size" : "83.5x83.5",
-      "idiom" : "ipad",
       "filename" : "Icon-App-83.5x83.5@2x.png",
-      "scale" : "2x"
+      "idiom" : "universal",
+      "platform" : "ios",
+      "scale" : "2x",
+      "size" : "83.5x83.5"
     },
     {
-      "size" : "1024x1024",
-      "idiom" : "ios-marketing",
       "filename" : "Icon-App-1024x1024.png",
-      "scale" : "1x"
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "filename" : "Icon-AppleWatch-16x16.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "16x16"
+    },
+    {
+      "filename" : "Icon-AppleWatch-32x32.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "16x16"
+    },
+    {
+      "filename" : "Icon-AppleWatch-32x32 1.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "32x32"
+    },
+    {
+      "filename" : "Icon-AppleWatch-64x64.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "32x32"
+    },
+    {
+      "filename" : "Icon-AppleWatch-128x128.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "128x128"
+    },
+    {
+      "filename" : "Icon-AppleWatch-256x256@2x 1.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "128x128"
+    },
+    {
+      "filename" : "Icon-AppleWatch-256x256@2x.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "256x256"
+    },
+    {
+      "filename" : "Icon-AppleWatch-512x512@2x.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "256x256"
+    },
+    {
+      "filename" : "Icon-AppleWatch-512x512@2x 1.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "512x512"
+    },
+    {
+      "filename" : "Icon-AppleWatch-1024x1024.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "512x512"
+    },
+    {
+      "filename" : "Icon-AppleWatch-44x44.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "22x22"
+    },
+    {
+      "filename" : "Icon-AppleWatch-48x48.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "24x24"
+    },
+    {
+      "filename" : "Icon-AppleWatch-55x55.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "27.5x27.5"
+    },
+    {
+      "filename" : "Icon-AppleWatch-29x29@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "29x29"
+    },
+    {
+      "filename" : "Icon-AppleWatch-30x30@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "30x30"
+    },
+    {
+      "filename" : "Icon-AppleWatch-64x64 1.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "32x32"
+    },
+    {
+      "filename" : "Icon-AppleWatch-33x33@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "33x33"
+    },
+    {
+      "filename" : "Icon-AppleWatch-40x40@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "40x40"
+    },
+    {
+      "filename" : "Icon-AppleWatch-43.5x43.5@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "43.5x43.5"
+    },
+    {
+      "filename" : "Icon-AppleWatch-44x44@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "44x44"
+    },
+    {
+      "filename" : "Icon-AppleWatch-46x46@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "46x46"
+    },
+    {
+      "filename" : "Icon-AppleWatch-50x50@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "50x50"
+    },
+    {
+      "filename" : "Icon-AppleWatch-51x51@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "51x51"
+    },
+    {
+      "filename" : "Icon-AppleWatch-108x108.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "54x54"
+    },
+    {
+      "filename" : "Icon-AppleWatch-86x86@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "86x86"
+    },
+    {
+      "filename" : "Icon-AppleWatch-98x98@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "98x98"
+    },
+    {
+      "filename" : "Icon-AppleWatch-108x108@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "108x108"
+    },
+    {
+      "filename" : "Icon-AppleWatch-117x117@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "117x117"
+    },
+    {
+      "filename" : "Icon-AppleWatch-129x129@2x.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "scale" : "2x",
+      "size" : "129x129"
+    },
+    {
+      "filename" : "Icon-AppleWatch-1024x1024 1.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
+      "size" : "1024x1024"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
-  },
-  "properties" : {
-    "pre-rendered" : true
+    "author" : "xcode",
+    "version" : 1
   }
 }
