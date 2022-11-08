@@ -24,6 +24,9 @@
 "22" = "Twenty-Two";
 "23" = "Twenty-Three";
 
+/* Normal version of the number twelve */
+"12-standard" = "Twelve";
+
 /* Minute Conversions */
 "25" = "Twenty-Five";
 "35" = "Thirty-Five";
@@ -31,9 +34,10 @@
 
 /* Time Strings */
 "%@ o'clock" = "%@ O'Clock";
-"Five past %@" = "Five Past %@";
-"Quarter past %@" = "Quarter Past %@";
-"Half past %@" = "Half Past %@";
+"Five past %@" = "Five past %@";
+"Ten past %@" = "Ten past %@";
+"Quarter past %@" = "Quarter past %@";
+"Half past %@" = "Half past %@";
 "Quarter til %@" = "Quarter til %@";
 "Ten til %@" = "Ten til %@";
 "Five til %@" = "Five til %@";
@@ -41,9 +45,10 @@
 
 /* One O'Clock Hour */
 "%@ o'clock-one" = "%@ O'Clock";
-"Five past %@-one" = "Five Past %@";
-"Quarter past %@-one" = "Quarter Past %@";
-"Half past %@-one" = "Half Past %@";
+"Five past %@-one" = "Five past %@";
+"Ten past %@-one" = "Ten past %@";
+"Quarter past %@-one" = "Quarter past %@";
+"Half past %@-one" = "Half past %@";
 "Quarter til %@-one" = "Quarter til %@";
 "Ten til %@-one" = "Ten til %@";
 "Five til %@-one" = "Five til %@";

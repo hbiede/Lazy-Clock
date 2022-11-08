@@ -29,25 +29,8 @@ public struct NaturalLanguageTime: CustomStringConvertible {
         set {
             let tempArray = newValue.split(separator: ":")
             hours = Int(tempArray[0]) ?? nil
-            // Change 24 to 12 hour time
-            if hours! > 12 &&
-                DateFormatter.dateFormat(
-                    fromTemplate: "j",
-                    options: 0,
-                    locale: Locale.current
-                )!.contains("a") {
-                hours = hours! - 12
-            }
-            if tempArray.count > 1 {
-                minutes = Int(tempArray[1]) ?? nil
-            } else {
-                minutes = nil
-            }
-            if hours != nil && minutes != nil {
-                _description = toNatLang()
-            } else {
-                _description = "Default Time"
-            }
+            minutes = Int(tempArray[1]) ?? 0
+            _description = hours == nil ? "Default Time" : toNatLang()
         }
     }
 
@@ -76,36 +59,41 @@ public struct NaturalLanguageTime: CustomStringConvertible {
         guard var minuteValue = minutes else {
             return "Default Time"
         }
-        let oneOClock = hours! == 1 ||
-          (hours! == 13 &&
+        let is12HourClock = NSLocale.current.hourCycle == .oneToTwelve
+        let hoursValue = hours! > 12 && is12HourClock
+                ? hours! - 12
+                : hours!
+        let nextHour = (hoursValue == 12 && is12HourClock) || (hoursValue == 0 && !is12HourClock) ? 1 : (hoursValue + 1)
+        let oneOClock = hoursValue == 1 ||
+          (hoursValue == 13 &&
            !DateFormatter.dateFormat(
                 fromTemplate: "j",
                 options: 0,
                 locale: Locale.current
            )!.contains("a"))
-        let nextHourAsString = hours! == 23
+        let nextHourAsString = hours == 23
                 ? NSLocalizedString("0", comment: "midnight")
                 : NSLocalizedString(
-                    String(describing: hours! + 1),
+                    String(describing: nextHour),
                     comment: "The next hour, spelled out"
                   )
         minuteValue = roundByFive(minuteValue)
         var hourAsString = minuteValue >= 45
             ? nextHourAsString
             : NSLocalizedString(
-                String(describing: hours!),
+                String(describing: hoursValue),
                 comment: "The current hour, spelled out"
               )
 
         if NSLocale.current.identifier == "en_GB" && minuteValue == 30 {
             hourAsString = NSLocalizedString(
-                String(describing: hours! + 1),
+                String(describing: hoursValue + 1),
                 comment: "The current hour, spelled out, but incremented for british time telling"
             )
         }
 
-        if (minutes == 0 || minutes == 60) &&
-            (hours! == 23 || hours! == 11 || hours! == 0 || hours! == 12) {
+        if (minuteValue == 0 || minuteValue == 60) &&
+            (hoursValue == 23 || hoursValue == 11 || hoursValue == 0 || hoursValue == 12) {
             return hourAsString
         }
 
@@ -123,6 +111,13 @@ public struct NaturalLanguageTime: CustomStringConvertible {
             String(describing: minuteValue),
             comment: "Minute Value"
         )
+
+        hourAsString = hoursValue == 0 || hoursValue == 12
+            ? NSLocalizedString(
+                "12-standard",
+                comment: "minuteValue"
+              )
+            : hourAsString
         return String.localizedStringWithFormat(
             returnStatementFormat,
             hourAsString,
@@ -141,6 +136,11 @@ public struct NaturalLanguageTime: CustomStringConvertible {
             return NSLocalizedString(
                 oneOClock ? "Five past %@-one" : "Five past %@",
                 comment: "Five past the hour"
+            )
+        case 10:
+            return NSLocalizedString(
+                oneOClock ? "Ten past %@-one" : "Ten past %@",
+                comment: "Ten past the hour"
             )
         case 15:
             return NSLocalizedString(

@@ -11,11 +11,12 @@
 		3D7F7CC7228BBCAF00239A71 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F7CCA228BBCAF00239A71 /* Intents.intentdefinition */; };
 		3DF128DE221A165200F32DF2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DF128E4221A165200F32DF2 /* Localizable.strings */; };
 		3E2DDF8729174DD500B12C11 /* WidgetLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E2DDF8929174DD500B12C11 /* WidgetLocalizable.strings */; };
+		3E38ABAA29185C0900CE31D8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DF128E4221A165200F32DF2 /* Localizable.strings */; };
+		3E38ABAB29185CE600CE31D8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7C185D29173BA2002A2CEB /* Colors.swift */; };
 		3E7564212917336C00358511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35A85CC211225460053AB48 /* Assets.xcassets */; };
 		3E7C185E29173BA2002A2CEB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7C185D29173BA2002A2CEB /* Colors.swift */; };
 		3E88C5B52917302E00EF491C /* LazyClockWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E88C5B42917302E00EF491C /* LazyClockWatchApp.swift */; };
 		3E88C5B72917302E00EF491C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E88C5B62917302E00EF491C /* ContentView.swift */; };
-		3E88C5BC2917302F00EF491C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E88C5BB2917302F00EF491C /* Preview Assets.xcassets */; };
 		3E88C5C02917304C00EF491C /* NaturalLanguageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35A85CE211225460053AB48 /* NaturalLanguageTime.swift */; };
 		3EC300B029171C8300500420 /* LazyClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC300AF29171C8300500420 /* LazyClock.swift */; };
 		3EC300CD2917211500500420 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC3005F29170FC200500420 /* WidgetKit.framework */; };
@@ -102,11 +103,9 @@
 		3E88C5B22917302E00EF491C /* Lazy Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lazy Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E88C5B42917302E00EF491C /* LazyClockWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyClockWatchApp.swift; sourceTree = "<group>"; };
 		3E88C5B62917302E00EF491C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		3E88C5BB2917302F00EF491C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3EC3005F29170FC200500420 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		3EC3006129170FC200500420 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		3EC300AF29171C8300500420 /* LazyClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyClock.swift; sourceTree = "<group>"; };
-		3EC300B629171F7300500420 /* LazyClockWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "LazyClockWatch Watch App.app"; path = "/Users/ebiede/Desktop/Code/Personal Projects/Lazy-Clock/build/Debug-watchos/LazyClockWatch Watch App.app"; sourceTree = "<absolute>"; };
 		3EC300CC2917211500500420 /* LazyClockWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LazyClockWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EC300D02917211500500420 /* LazyClockWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyClockWidgetBundle.swift; sourceTree = "<group>"; };
 		3EC300D22917211500500420 /* LazyClockWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyClockWidget.swift; sourceTree = "<group>"; };
@@ -163,7 +162,6 @@
 		3E88C5AB2917288000EF491C /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				3EC300B629171F7300500420 /* LazyClockWatch Watch App.app */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -173,17 +171,8 @@
 			children = (
 				3E88C5B42917302E00EF491C /* LazyClockWatchApp.swift */,
 				3E88C5B62917302E00EF491C /* ContentView.swift */,
-				3E88C5BA2917302F00EF491C /* Preview Content */,
 			);
 			path = "LazyClockWatch Watch App";
-			sourceTree = "<group>";
-		};
-		3E88C5BA2917302F00EF491C /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				3E88C5BB2917302F00EF491C /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		3EC300CF2917211500500420 /* LazyClockWidget */ = {
@@ -400,7 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E88C5BC2917302F00EF491C /* Preview Assets.xcassets in Resources */,
+				3E38ABAA29185C0900CE31D8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E88C5C02917304C00EF491C /* NaturalLanguageTime.swift in Sources */,
+				3E38ABAB29185CE600CE31D8 /* Colors.swift in Sources */,
 				3E88C5B72917302E00EF491C /* ContentView.swift in Sources */,
 				3E88C5B52917302E00EF491C /* LazyClockWatchApp.swift in Sources */,
 			);
@@ -554,7 +544,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(LC_Build)";
-				DEVELOPMENT_ASSET_PATHS = "\"LazyClockWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 69RV8YV62P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -584,7 +573,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(LC_Build)";
-				DEVELOPMENT_ASSET_PATHS = "\"LazyClockWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 69RV8YV62P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -812,7 +800,11 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Lazy Clock/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Lazy Clock";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LC_Build = 29;
+				LC_Version = 1.4.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -844,7 +836,11 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Lazy Clock/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Lazy Clock";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LC_Build = 29;
+				LC_Version = 1.4.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

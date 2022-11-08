@@ -24,6 +24,9 @@
 "22"  = "Vingt et Deux";
 "23"  = "Vingt et Trois";
 
+/* Normal version of the number twelve */
+"12-standard" = "Douze";
+
 /* Minute Conversions */
 "25" = "Vingt et Cinq";
 "35" = "Trente-Cinq";
@@ -32,6 +35,7 @@
 /* Time Strings */
 "%@ o'clock" = "%@ Heures";
 "Five past %@" = "%@ Heures et Cinq";
+"Ten past %@" = "%@ Heuree et Dix";
 "Quarter past %@" = "%@ Hueres et Quart";
 "Half past %@" = "%@ Hueres et Demie";
 "Quarter til %@" = "%@ Heures Moins le Quart";
@@ -42,6 +46,7 @@
 /* One O'Clock Hour */
 "%@ o'clock-one" = "%@ Heure";
 "Five past %@-one" = "%@ Heure et Cinq";
+"Ten past %@-one" = "%@ Heure et Dix";
 "Quarter past %@-one" = "%@ Huere et Quart";
 "Half past %@-one" = "%@ Huere et Demie";
 "Quarter til %@-one" = "%@ Heure Moins le Quart";

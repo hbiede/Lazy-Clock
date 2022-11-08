@@ -24,6 +24,9 @@
 "22" = "Vientidos";
 "23" = "Vientitrés";
 
+/* Normal version of the number twelve */
+"12-standard" = "Doce";
+
 /* Minute Conversions */
 "25" = "Vienticinco";
 "35" = "Treinta y Cinco";
@@ -32,6 +35,7 @@
 /* Time Strings */
 "%@ o'clock" = "La %@";
 "Five past %@" = "%@ y Cinco";
+"Ten past %@" = "%@ y Diez";
 "Quarter past %@" = "%@ y Cuarto";
 "Half past %@" = "%@ y Media";
 "Quarter til %@" = "%@ Menos Cuarto";
@@ -42,6 +46,7 @@
 /* One O'Clock Hour */
 "%@ o'clock-one" = "Las %@";
 "Five past %@-one" = "%@ y Cinco";
+"Ten past %@-one" = "%@ y Diez";
 "Quarter past %@-one" = "%@ y Cuarto";
 "Half past %@-one" = "%@ y Media";
 "Quarter til %@-one" = "%@ Menos Cuarto";

@@ -9,57 +9,82 @@
 import XCTest
 
 class LazyClockTests: XCTestCase {
-
-    func timeConversionTest() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        var natTime = NaturalLanguageTime.NatTime()
+    func testTimeConversion() {
+        var natTime = NaturalLanguageTime()
 
         natTime.timeString = "00:00"
-        XCTAssert(natTime.getNatLangString() == "Midnight")
+        XCTAssertEqual(natTime.description, "Midnight")
 
         natTime.timeString = "00:05"
-        XCTAssert(natTime.getNatLangString() == "Five Past Midnight")
+        XCTAssertEqual(natTime.description, "Five past Midnight")
+
+        natTime.timeString = "00:08"
+        XCTAssertEqual(natTime.description, "Ten past Midnight")
 
         natTime.timeString = "00:10"
-        XCTAssert(natTime.getNatLangString() == "Ten Past Midnight")
+        XCTAssertEqual(natTime.description, "Ten past Midnight")
 
         natTime.timeString = "00:15"
-        XCTAssert(natTime.getNatLangString() == "Quarter Past Midnight")
+        XCTAssertEqual(natTime.description, "Quarter past Midnight")
 
         natTime.timeString = "00:20"
-        XCTAssert(natTime.getNatLangString() == "Twelve Twenty")
+        XCTAssertEqual(natTime.description, "Twelve Twenty")
 
         natTime.timeString = "00:25"
-        XCTAssert(natTime.getNatLangString() == "Twelve Twenty Five")
+        XCTAssertEqual(natTime.description, "Twelve Twenty-Five")
 
         natTime.timeString = "00:30"
-        XCTAssert(natTime.getNatLangString() == "Half Past Midnight")
+        XCTAssertEqual(natTime.description, "Half past Midnight")
 
         natTime.timeString = "00:35"
-        XCTAssert(natTime.getNatLangString() == "Twelve Thirty Five")
+        XCTAssertEqual(natTime.description, "Twelve Thirty-Five")
 
         natTime.timeString = "00:45"
-        XCTAssert(natTime.getNatLangString() == "Quarter Til One")
+        XCTAssertEqual(natTime.description, "Quarter til One")
 
         natTime.timeString = "00:50"
-        XCTAssert(natTime.getNatLangString() == "Ten Til One")
+        XCTAssertEqual(natTime.description, "Ten til One")
 
         natTime.timeString = "00:55"
-        XCTAssert(natTime.getNatLangString() == "Five Til One")
+        XCTAssertEqual(natTime.description, "Five til One")
 
         natTime.timeString = "01:30"
-        XCTAssert(natTime.getNatLangString() == "Five Til One")
+        XCTAssertEqual(natTime.description, "Half past One")
 
         natTime.timeString = "01:55"
-        XCTAssert(natTime.getNatLangString() == "Half Past One")
+        XCTAssertEqual(natTime.description, "Five til Two")
+
+        natTime.timeString = "12:00"
+        XCTAssertEqual(natTime.description, "Noon")
+
+        natTime.timeString = "12:20"
+        XCTAssertEqual(natTime.description, "Twelve Twenty")
+
+        natTime.timeString = "12:55"
+        XCTAssertEqual(natTime.description, "Five til One")
+
+        natTime.timeString = "13:53"
+        XCTAssertEqual(natTime.description, "Five til Two")
 
         natTime.timeString = "13:55"
-        XCTAssert(natTime.getNatLangString() == "Five Til One")
+        XCTAssertEqual(natTime.description, "Five til Two")
+
+        natTime.timeString = "14:20"
+        XCTAssertEqual(natTime.description, "Two Twenty")
+
+        natTime.timeString = "14:30"
+        XCTAssertEqual(natTime.description, "Half past Two")
+        
+        natTime.timeString = "14:45"
+        XCTAssertEqual(natTime.description, "Quarter til Three")
+        
+        natTime.timeString = "15:10"
+        XCTAssertEqual(natTime.description, "Ten past Three")
+
+        natTime.timeString = "23:13"
+        XCTAssertEqual(natTime.description, "Quarter past Eleven")
 
         natTime.timeString = "23:55"
-        XCTAssert(natTime.getNatLangString() == "Five Til Midnight")
-
+        XCTAssertEqual(natTime.description, "Five til Midnight")
     }
-
 }
